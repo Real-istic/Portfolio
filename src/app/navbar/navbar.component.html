@@ -1,2 +1,30 @@
-<p>navbar works!</p>
-<img src="/assets/img/PMtransparent.png" alt="">
+<header>
+  <div class="menu-logo">
+    <a (mouseover)="vanishLogo.style.opacity = '0'; vanishLogo.style.transition = 'opacity 0.6s ease-in-out'"
+      (mouseout)="vanishLogo.style.opacity = '1'; vanishLogo.style.transition = 'opacity 0.6s ease-in-out'"
+      href=""><img src="/assets/img/PM_logo_transp.png" alt=""></a>
+    <img #vanishLogo src="/assets/img/PM_logo_transp.png" alt="" style="transition: opacity 0.4s ease-in-out;">
+  </div>
+  <div class="menu-left">
+    <div class="menu-para-div">
+      <a (mouseover)="vanishAbout.classList.add('opacity-zero')"
+        (mouseout)="vanishAbout.classList.remove('opacity-zero')" href="">About Me</a>
+      <span #vanishAbout>About Me</span>
+    </div>
+    <div class="menu-para-div">
+      <a (mouseover)="vanishProjects.classList.add('opacity-zero')"
+        (mouseout)="vanishProjects.classList.remove('opacity-zero')" href="">Projects</a>
+      <span #vanishProjects>Projects</span>
+    </div>
+    <div class="menu-para-div">
+      <a (mouseover)="vanishImprint.classList.add('opacity-zero')"
+        (mouseout)="vanishImprint.classList.remove('opacity-zero')" routerLink="/imprint">Imprint</a>
+      <span #vanishImprint>Imprint</span>
+    </div>
+    <div class="menu-para-div">
+      <a (mouseover)="vanishDataProt.classList.add('opacity-zero')"
+        (mouseout)="vanishDataProt.classList.remove('opacity-zero')" routerLink="/data-protection">Data protection</a>
+      <span #vanishDataProt>Data protection</span>
+    </div>
+  </div>
+</header>
