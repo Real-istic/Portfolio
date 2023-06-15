@@ -1,40 +1,33 @@
 header {
-  position: absolute;
+  position: sticky;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   top: 0;
   right: 0;
   left: 0;
   z-index: 1;
-  padding: 10px 120px;
+  padding: 0px 100px;
   justify-content: space-between;
   background: #141D2F;
-  backdrop-filter: blur(32.5px);
+  height: 140px;
+  padding: 20px 100px;
 
-  img {
+  a img {
+    margin-bottom: 6px;
     height: 90px;
-    margin-right: 15px;
-  }
-}
-
-.menu-logo {
-  display: flex;
-  flex-direction: column;
-
-  >img {
-    -o-transform: scaleY(-1);
-    transform: rotateX(210deg) translateY(10px);
-    -webkit-mask-image: -webkit-gradient(linear, right top, right bottom, from(transparent), color-stop(15%, transparent), to(rgba(250, 253, 48, 0.66)));
-  }
-
-  >a img {
-    padding-bottom: 5px;
+    padding-bottom: 3px;
     border-bottom: 2px solid #00BEE8;
     box-shadow: 0px 8px 6px -6px #00bee8;
+    transition: all 0.25s ease-in-out;
+
+    &:hover {
+      box-shadow: 0px 8px 6px -6px #00bee800;
+      transition: all 0.25s ease-in-out;
+    }
   }
 }
 
-.menu-left {
+.menu-right {
   display: flex;
   flex-direction: row;
   gap: 40px;
@@ -61,7 +54,7 @@ header {
     color: transparent;
     -webkit-background-clip: text;
     text-decoration: none;
-    transition: all 0.1s ease-in-out;
+    transition: all 0.25s ease-in-out;
     border-bottom: 2px solid #00BEE8;
     box-shadow: 0px 8px 6px -6px #00bee8;
 
@@ -69,7 +62,7 @@ header {
     &:hover {
       // transform: translateX(5px);
       // border-bottom: 3px solid #00BEE8;
-      transition: all 0.1s ease-in-out;
+      transition: all 0.25s ease-in-out;
       background-image: linear-gradient(to right,
           #003f4d 0,
           #006c84 5%,

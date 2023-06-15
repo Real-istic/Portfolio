@@ -1,11 +1,6 @@
 <header>
-  <div class="menu-logo">
-    <a (mouseover)="vanishLogo.style.opacity = '0'; vanishLogo.style.transition = 'opacity 0.6s ease-in-out'"
-      (mouseout)="vanishLogo.style.opacity = '1'; vanishLogo.style.transition = 'opacity 0.6s ease-in-out'"
-      href=""><img src="/assets/img/PM_logo_transp.png" alt=""></a>
-    <img #vanishLogo src="/assets/img/PM_logo_transp.png" alt="" style="transition: opacity 0.4s ease-in-out;">
-  </div>
-  <div class="menu-left">
+  <a href=""><img src="/assets/img/PM_logo_transp.png" alt=""></a>
+  <div class="menu-right">
     <div class="menu-para-div">
       <a (mouseover)="vanishAbout.classList.add('opacity-zero')"
         (mouseout)="vanishAbout.classList.remove('opacity-zero')" href="">About Me</a>
