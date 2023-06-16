@@ -9,13 +9,11 @@ header {
   padding: 0px 100px;
   justify-content: space-between;
   background: #141D2F;
-  height: 160px;
-  padding: 20px 100px;
+  height: 150px;
+  padding-bottom: 30px;
 
   a img {
-    margin-bottom: 6px;
     height: 80px;
-    padding-bottom: 3px;
     border-bottom: 2px solid #00BEE8;
     box-shadow: 0px 8px 6px -6px #00bee8;
     transition: all 0.25s ease-in-out;
@@ -31,7 +29,8 @@ header {
   display: flex;
   flex-direction: row;
   gap: 40px;
-  max-height: 50px;
+  margin-bottom: -24px;
+  // max-height: 50px;
 }
 
 .menu-para-div {
