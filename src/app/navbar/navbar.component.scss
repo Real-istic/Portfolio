@@ -1,19 +1,18 @@
 header {
   position: sticky;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   top: 0;
   right: 0;
   left: 0;
-  z-index: 1;
-  padding: 0px 100px;
+  z-index: 4;
+  padding: 10px 100px 0 100px;
   justify-content: space-between;
   background: #141D2F;
-  height: 140px;
-  padding-bottom: 30px;
+  height: 110px;
 
   a img {
-    height: 80px;
+    height: 70px;
     // border-bottom: 2px solid #00BEE8;
     // box-shadow: 0px 11px 6px -9px #00bee8;
     transition: all 0.25s ease-in-out;
