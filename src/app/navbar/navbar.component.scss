@@ -9,13 +9,13 @@ header {
   padding: 0px 100px;
   justify-content: space-between;
   background: #141D2F;
-  height: 150px;
+  height: 140px;
   padding-bottom: 30px;
 
   a img {
     height: 80px;
-    border-bottom: 2px solid #00BEE8;
-    box-shadow: 0px 8px 6px -6px #00bee8;
+    // border-bottom: 2px solid #00BEE8;
+    // box-shadow: 0px 11px 6px -9px #00bee8;
     transition: all 0.25s ease-in-out;
 
     &:hover {
@@ -30,7 +30,7 @@ header {
   flex-direction: row;
   gap: 40px;
   margin-bottom: -24px;
-  // max-height: 50px;
+  min-height: 70px;
 }
 
 .menu-para-div {
@@ -41,36 +41,38 @@ header {
     white-space: nowrap;
     font-style: italic;
     font-size: 24px;
+    font-weight: 500;
     padding: 0 5px;
-    background-image: linear-gradient(to right,
-        #545454 0,
-        #8b8b8b 5%,
-        #d3d3d3 45%,
-        #ececec 50%,
-        #e1e1e1 55%,
-        #b3b3b3 95%,
-        #656565 100%);
-    color: transparent;
-    -webkit-background-clip: text;
+    // background-image: linear-gradient(to bottom,
+    //     #4f4f4f 0,
+    //     #8f8f8f 5%,
+    //     #e1e1e1 45%,
+    //     #ffffff 50%,
+    //     #d1d1d1 55%,
+    //     #454545 95%,
+    //     #212121 100%);
+    // color: transparent;
+    // -webkit-background-clip: text;
+    color: white;
     text-decoration: none;
-    transition: all 0.25s ease-in-out;
-    border-bottom: 2px solid #00BEE8;
-    box-shadow: 0px 8px 6px -6px #00bee8;
-
+    transition: all 0.2s ease-in-out;
+    border-bottom: 0px solid #00bee800;
+    // box-shadow: 0px 8px 6px -6px #00bee8;
 
     &:hover {
-      // transform: translateX(5px);
-      // border-bottom: 3px solid #00BEE8;
-      transition: all 0.25s ease-in-out;
-      background-image: linear-gradient(to right,
-          #003f4d 0,
-          #006c84 5%,
-          #00add3 45%,
-          #00BEE8 50%,
-          #00BEE8 55%,
-          #0084a2 95%,
-          #003e4b 100%);
-      box-shadow: 0px 8px 6px -6px #00bee800;
+      transform: translateX(5px);
+      transition: all 0.2s ease-in-out;
+      // background-image: linear-gradient(to bottom,
+      //     #003f4d 0,
+      //     #007b96 5%,
+      //     #01b1d8 45%,
+      //     #00d0ff 50%,
+      //     #00add4 55%,
+      //     #003f4d 95%,
+      //     #00232a 100%);
+      // box-shadow: 0px 8px 6px -6px #00bee800;
+      border-bottom: 2px solid #00bee8;
+      color: #00BEE8;
     }
   }
 
@@ -79,22 +81,20 @@ header {
     font-size: 24px;
     -o-transform: scaleY(-1);
     transform: rotateX(210deg) translateX(5px);
-    -webkit-mask-image: -webkit-gradient(linear, right top, right bottom, from(transparent), color-stop(15%, transparent), to(rgba(250, 253, 48, 0.66)));
-    background-image: linear-gradient(to right,
-        #545454 0,
-        #8b8b8b 5%,
-        #d3d3d3 45%,
-        #ececec 50%,
-        #e1e1e1 55%,
-        #b3b3b3 95%,
-        #656565 100%);
+    -webkit-mask-image: -webkit-gradient(linear, right top, right bottom, from(transparent), color-stop(20%, transparent), to(rgba(0, 0, 0, 0.66)));
+    background-image: linear-gradient(to bottom,
+        #4f4f4f 0,
+        #8f8f8f 5%,
+        #e1e1e1 45%,
+        #ffffff 50%,
+        #d1d1d1 55%,
+        #454545 95%,
+        #212121 100%);
     color: transparent;
     -webkit-background-clip: text;
     margin-top: -4px;
     opacity: 1;
     transition: all 1.0s ease-in-out;
-    // box-shadow: 5px 5px 15px 5px #00BEE8, 5px 5px 15px 5px #00BEE8 inset;
-
   }
 
   .opacity-zero {
