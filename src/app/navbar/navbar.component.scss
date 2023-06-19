@@ -45,9 +45,9 @@ header {
     border-bottom: 0px solid #00bee800;
 
     &:hover {
-      transform: translateX(5px);
-      transition: all 0.2s ease-in-out;
-      border-bottom: 2px solid #00bee8;
+      // transform: translateX(5px);
+      transition: all 0.1s ease-in-out;
+      border-bottom: 3px solid #00bee8;
       color: #00BEE8;
     }
   }
@@ -59,7 +59,7 @@ header {
     transform: rotateX(210deg) translateX(5px);
     -webkit-mask-image: -webkit-gradient(linear, right top, right bottom, from(transparent), color-stop(20%, transparent), to(rgba(0, 0, 0, 0.66)));
     color: rgba(255, 255, 255, 0.66);
-    margin-top: -4px;
+    margin-top: -6px;
     opacity: 1;
     transition: all 1.0s ease-in-out;
   }
@@ -67,6 +67,6 @@ header {
   .opacity-zero {
     opacity: 0;
     color: #00BEE8;
-    transition: all 0.4s ease-in-out;
+    transition: all 0.3s ease-in-out;
   }
 }
