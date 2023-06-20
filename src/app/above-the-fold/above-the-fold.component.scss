@@ -2,21 +2,25 @@
   position: relative;
   background: #141D2F;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-around;
   align-items: center;
   width: 100%;
   height: 750px;
+  padding: 0 100px;
+}
+
+.main-left {
+  position: relative;
+  display: flex;
 }
 
 .blur-img {
   position: absolute;
-  left: -100px;
-  top: 80px;
+  left: -200px;
+  top: 40px;
 }
 
 .main-part-photo {
-  position: absolute;
-  left: 60px;
   z-index: 1;
   width: 450px;
 }
@@ -27,8 +31,8 @@
   align-items: center;
   position: relative;
   margin-top: -200px;
-  margin-right: 100px;
   z-index: 3;
+  white-space: nowrap;
 
   >span {
     font-size: 64px;
@@ -91,8 +95,9 @@
 
 .banner {
   position: absolute;
-  bottom: -575px;
-  height: 1100px;
+  left: 0;
+  bottom: -313px;
+  height: 700px;
   z-index: 1;
   width: 100%;
 }
@@ -194,6 +199,7 @@
     color: rgba(255, 255, 255, 0.66);
     margin-top: -4px;
     transition: all 1s ease-in-out;
+    height: 100%;
   }
 }
 
@@ -201,7 +207,7 @@
 .opacity-zero {
   color: #00bee8;
   opacity: 0;
-  transition: all 0.3s ease-in-out!important;
+  transition: all 0.3s ease-in-out !important;
 }
 
 @keyframes move {
@@ -215,5 +221,47 @@
 
   100% {
     transform: translateX(0px) rotate(-90deg) scale(1.1);
+  }
+}
+
+@media (min-width: 1930px) {
+
+  .main-part {
+    padding: 0 300px;
+    justify-content: space-between;
+  }
+
+  .main-part-photo {
+    z-index: 1;
+    width: 500px;
+  }
+
+  .social-bar {
+    padding-left: 300px;
+    margin-left: -300px;
+
+    svg {
+      transform: scale(1.2);
+
+      &:hover {
+        transform: scale(1.35);
+      }
+    }
+  }
+
+  .social-border-div {
+    width: 300px;
+  }
+
+  .mirror-div {
+    justify-content: flex-start;
+
+    a {
+      font-size: 36px;
+    }
+
+    span {
+      font-size: 36px;
+    }
   }
 }

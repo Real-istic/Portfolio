@@ -45,7 +45,6 @@ header {
     border-bottom: 0px solid #00bee800;
 
     &:hover {
-      // transform: translateX(5px);
       transition: all 0.1s ease-in-out;
       border-bottom: 3px solid #00bee8;
       color: #00BEE8;
@@ -57,7 +56,9 @@ header {
     font-size: 24px;
     -o-transform: scaleY(-1);
     transform: rotateX(210deg) translateX(5px);
+    mask-image: -webkit-gradient(linear, right top, right bottom, from(transparent), color-stop(20%, transparent), to(rgba(0, 0, 0, 0.66)));
     -webkit-mask-image: -webkit-gradient(linear, right top, right bottom, from(transparent), color-stop(20%, transparent), to(rgba(0, 0, 0, 0.66)));
+    height: 100%;
     color: rgba(255, 255, 255, 0.66);
     margin-top: -6px;
     opacity: 1;
@@ -68,5 +69,22 @@ header {
     opacity: 0;
     color: #00BEE8;
     transition: all 0.3s ease-in-out;
+  }
+}
+
+@media (min-width: 1930px) {
+  header {
+    padding: 10px 300px 0 300px;
+  }
+
+  .menu-mirror-div {
+
+    a {
+      font-size: 36px;
+    }
+
+    span {
+      font-size: 36px;
+    }
   }
 }
