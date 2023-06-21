@@ -1,0 +1,120 @@
+.main-skills {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #141D2F;
+  padding: 200px 100px;
+  overflow-x: clip;
+}
+
+.skills-left {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 100px;
+  width: 60%;
+} 
+
+.skills-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 120px;
+  margin: -20px 0;
+
+  span {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 120%;
+    color: white;
+    text-align: center;
+  }
+}
+
+.skills-right {
+  display: flex;
+  align-items: flex-end;
+  width: 30%;
+}
+
+.skills-description {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  h1 {
+    font-weight: 700;
+    font-size: 90px;
+    line-height: 100%;
+    color: white;
+    border-bottom: 3px solid #00BEE8;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-top: 0;
+    white-space: nowrap;
+  }
+
+  p {
+    font-size: 16px;
+    color: white;
+    line-height: 120%;
+  }
+
+  button {
+    position: absolute;
+    border: none;
+    bottom: -100px;
+    left: calc(50% - 100px);
+    padding: 15px 30px;
+    background: #00BEE8;
+    color: white;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    width: 200px;
+    height: 58px;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 120%;
+    cursor: pointer;
+    transition: all 100ms ease-in-out;
+
+    &:hover {
+      background: #4B47FF;
+      box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+      transition: all 150ms ease-in-out;
+      transform: scale(1.1);
+    }
+  }
+}
+
+.skills-border-div {
+  border: 3px solid #4B47FF;
+  width: 500px;
+  height: 0px;
+  border-radius: 4px 0 0 4px;
+  margin-right: -100px;
+}
+
+@media (min-width: 1930px) {
+  .skills-description {
+    p {
+      font-size: 24px;
+    }
+  }
+
+  .main-skills {
+    padding: 200px 300px;
+  }
+
+  .skills-border-div {
+    margin-right: -300px;
+  }
+}

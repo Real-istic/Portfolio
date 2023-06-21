@@ -1,15 +1,16 @@
+<div id="topPage" style="opacity: 0; z-index: -1;"></div>
 <header>
-  <a href=""><img src="/assets/img/PM_logo_transp.png" alt=""></a>
+  <a href="#topPage"><img src="/assets/img/PM_logo_transp.png" alt=""></a>
   <div class="menu-right">
     <div class="menu-mirror-div">
       <a (mouseover)="vanishAbout.classList.add('opacity-zero')"
-        (mouseout)="vanishAbout.classList.remove('opacity-zero')" href="">About Me</a>
+        (mouseout)="vanishAbout.classList.remove('opacity-zero')" href="#aboutMe">About Me</a>
       <span #vanishAbout>About Me</span>
     </div>
     <div class="menu-mirror-div">
       <a (mouseover)="vanishProjects.classList.add('opacity-zero')"
-        (mouseout)="vanishProjects.classList.remove('opacity-zero')" href="">Projects</a>
-      <span #vanishProjects>Projects</span>
+        (mouseout)="vanishProjects.classList.remove('opacity-zero')" href="#skills">Skills</a>
+      <span #vanishProjects>Skills</span>
     </div>
     <div class="menu-mirror-div">
       <a (mouseover)="vanishImprint.classList.add('opacity-zero')"
