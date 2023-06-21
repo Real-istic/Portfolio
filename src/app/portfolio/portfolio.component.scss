@@ -1,0 +1,45 @@
+h1 {
+  font-weight: 700;
+  font-size: 90px;
+  line-height: 100%;
+  color: white;
+  border-bottom: 3px solid #00BEE8;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto 50px;
+  white-space: nowrap;
+}
+
+.main {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #141D2F;
+  padding: 200px 100px;
+  overflow-x: clip;
+}
+
+.main-headline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #141D2F;
+  overflow: hidden;
+
+}
+
+.left-border-div {
+  border: 3px solid #4B47FF;
+  width: 100px;
+  border-radius: 3px 0 0 3px;
+  height: 0;
+}
+
+.right-border-div {
+  border: 3px solid #4B47FF;
+  width: 50%;
+  margin-right: -50%;
+  height: 0;
+}
+

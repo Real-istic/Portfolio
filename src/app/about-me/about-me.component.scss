@@ -57,14 +57,14 @@ p {
 }
 
 .about-border-div {
-  border: 3px solid #00BEE8;
+  border: 2px solid #00BEE8;
   height: 0;
   width: 300px;
   z-index: 1;
 }
 
 .main-photo {
-  border: 6px solid #00BEE8;
+  border: 4px solid #00BEE8;
   border-radius: 50%;
   width: 30vw;
   height: 30vw;
@@ -85,7 +85,7 @@ p {
 
 @media (min-width: 1930px) {
   .main {
-    padding: 125px 300px;
+    padding: 150px 300px;
   }
 
   .main-photo-wrapper {

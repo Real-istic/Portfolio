@@ -1,4 +1,4 @@
-.main-skills {
+.main {
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -14,7 +14,9 @@
   flex-wrap: wrap;
   gap: 100px;
   width: 60%;
-} 
+  height: 500px;
+  min-height: 300px;
+}
 
 .skills-wrapper {
   display: flex;
@@ -24,6 +26,7 @@
   gap: 10px;
   width: 120px;
   margin: -20px 0;
+  z-index: 2;
 
   span {
     font-weight: 700;
@@ -36,14 +39,16 @@
 
 .skills-right {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   width: 30%;
+  height: 400px;
 }
 
 .skills-description {
   position: relative;
   display: flex;
   flex-direction: column;
+  height: 100%;
 
   h1 {
     font-weight: 700;
@@ -96,11 +101,20 @@
 }
 
 .skills-border-div {
+  position: absolute;
+  right: 0;
+  bottom: 175px;
   border: 3px solid #4B47FF;
-  width: 500px;
+  width: 100px;
   height: 0px;
   border-radius: 4px 0 0 4px;
-  margin-right: -100px;
+}
+
+.skills-blur {
+  position: absolute;
+  left: 0;
+  top: 350px;
+  z-index: 1;
 }
 
 @media (min-width: 1930px) {
@@ -110,11 +124,11 @@
     }
   }
 
-  .main-skills {
-    padding: 200px 300px;
+  .main {
+    padding: 150px 300px;
   }
 
   .skills-border-div {
-    margin-right: -300px;
+    width: 300px;
   }
 }

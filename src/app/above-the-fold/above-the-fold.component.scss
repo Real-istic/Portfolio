@@ -1,4 +1,4 @@
-.main-part {
+.main {
   position: relative;
   background: #141D2F;
   display: flex;
@@ -20,7 +20,7 @@
   top: 40px;
 }
 
-.main-part-photo {
+.main-photo {
   z-index: 1;
   width: 450px;
 }
@@ -96,7 +96,7 @@
 .banner {
   position: absolute;
   left: 0;
-  bottom: -313px;
+  bottom: -300px;
   height: 700px;
   z-index: 1;
   width: 100%;
@@ -226,12 +226,12 @@
 
 @media (min-width: 1930px) {
 
-  .main-part {
+  .main {
     padding: 0 300px;
     justify-content: space-between;
   }
 
-  .main-part-photo {
+  .main-photo {
     z-index: 1;
     width: 500px;
   }
