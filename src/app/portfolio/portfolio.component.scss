@@ -10,23 +10,26 @@ h1 {
   white-space: nowrap;
 }
 
-.main {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #141D2F;
-  padding: 200px 100px;
-  overflow-x: clip;
+p {
+  position: absolute;
+  text-align: center;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  font-size: 16px;
+  color: white;
+  line-height: 120%;
+  margin-left: 100px;
 }
 
 .main-headline {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #141D2F;
   overflow: hidden;
-
+  height: 250px;
 }
 
 .left-border-div {
@@ -43,3 +46,112 @@ h1 {
   height: 0;
 }
 
+.main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #141D2F;
+  padding: 200px 100px;
+  overflow-x: hidden;
+}
+
+.project {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin: 100px 0;
+
+  img {
+    width: 40%;
+  }
+}
+
+.project-description-wrapper {
+  width: 40%;
+}
+
+.project-description {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  h3 {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 120%;
+    color: #4B47FF;
+  }
+
+  span {
+    font-size: 23px;
+    line-height: 120%;
+    color: #00BEE8;
+  }
+
+  p {
+    position: relative;
+    margin-left: 0;
+    text-align: left;
+  }
+}
+
+.project:nth-child(2), .project:nth-child(4) {
+  flex-direction: row-reverse;
+}
+
+.project-buttons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 50px;
+
+  button {
+    padding: 15px 30px;
+    color: white;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    height: 58px;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 120%;
+    cursor: pointer;
+    transition: all 100ms ease-in-out;
+
+  }
+
+  button:nth-child(1) {
+    background: #4B47FF;
+    border: none;
+
+    &:hover {
+      background: #00BEE8;
+      transition: all 150ms ease-in-out;
+    }
+  }
+
+  button:nth-child(2) {
+    background: none;
+    border: 1px solid #00BEE8;
+
+    &:hover {
+      background: #00BEE8;
+      transition: all 150ms ease-in-out;
+    }
+  }
+}
+
+@media (min-width: 1930px) {
+  p {
+    font-size: 24px;
+  }
+
+  .main {
+    padding: 200px 300px;
+  }
+}
