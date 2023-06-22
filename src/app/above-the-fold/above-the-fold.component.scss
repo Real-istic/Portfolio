@@ -2,10 +2,10 @@
   position: relative;
   background: #141D2F;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 750px;
+  height: 650px;
   padding: 0 100px;
 }
 
@@ -35,10 +35,10 @@
   white-space: nowrap;
 
   >span {
-    font-size: 64px;
-    line-height: 120%;
-    transform: rotate(-90deg);
+    font-size: 58px;
     color: white;
+    transform: rotate(-90deg);
+    margin-bottom: 3px;
   }
 }
 
@@ -81,7 +81,7 @@
 
 .main-right-name {
   font-weight: 700;
-  font-size: 90px;
+  font-size: 75px;
   line-height: 100%;
   color: white;
   border-bottom: 3px solid #00BEE8;
@@ -97,7 +97,7 @@
   position: absolute;
   left: 0;
   bottom: -300px;
-  height: 700px;
+  height: 650px;
   z-index: 1;
   width: 100%;
 }

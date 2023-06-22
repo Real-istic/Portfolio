@@ -11,15 +11,9 @@ h1 {
 }
 
 p {
-  position: absolute;
-  text-align: center;
-  bottom: 0;
-  right: 0;
-  left: 0;
   font-size: 16px;
   color: white;
   line-height: 120%;
-  margin-left: 100px;
 }
 
 .main-headline {
@@ -29,7 +23,17 @@ p {
   justify-content: center;
   background-color: #141D2F;
   overflow: hidden;
-  height: 250px;
+  height: 400px;
+  padding-top: 50px;
+  padding-bottom: 75px;
+
+  p {
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    width: 400px;
+    margin-left: 100px;
+  }
 }
 
 .left-border-div {
@@ -53,35 +57,43 @@ p {
   align-items: center;
   justify-content: center;
   background-color: #141D2F;
-  padding: 200px 100px;
-  overflow-x: hidden;
+  padding: 75px 100px;
+  overflow-x: clip;
 }
 
 .project {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   flex-direction: row;
   margin: 100px 0;
+  z-index: 1;
 
   img {
-    width: 40%;
+    width: 500px;
   }
 }
 
 .project-description-wrapper {
-  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 45%;
+  padding: 30px 0;
 }
 
 .project-description {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  gap: 24px;
 
   h3 {
     font-weight: 700;
     font-size: 32px;
     line-height: 120%;
     color: #4B47FF;
+    margin: 0;
   }
 
   span {
@@ -97,7 +109,8 @@ p {
   }
 }
 
-.project:nth-child(2), .project:nth-child(4) {
+.project:nth-child(2),
+.project:nth-child(4) {
   flex-direction: row-reverse;
 }
 
@@ -146,6 +159,19 @@ p {
   }
 }
 
+.blur-img-1 {
+  position: absolute;
+  opacity: 0.7;
+  top: 100px;
+  right: -550px;
+}
+
+.blur-img-2 {
+  position: absolute;
+  left: -200px;
+  bottom: 400px
+}
+
 @media (min-width: 1930px) {
   p {
     font-size: 24px;
@@ -153,5 +179,9 @@ p {
 
   .main {
     padding: 200px 300px;
+  }
+
+  .main-headline {
+    height: 650px;
   }
 }

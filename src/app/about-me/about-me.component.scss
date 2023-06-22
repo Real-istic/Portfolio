@@ -79,8 +79,9 @@ p {
 
 .blur-img {
   position: absolute;
-    right: -450px;
-    top: -150px;
+  right: -650px;
+  height: 1000px;
+  bottom: -300px;
 }
 
 @media (min-width: 1930px) {
@@ -101,6 +102,6 @@ p {
   }
 
   .blur-img {
-      right: -400px;
+    right: -400px;
   }
 }

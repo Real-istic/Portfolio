@@ -1,0 +1,64 @@
+h1 {
+  font-weight: 700;
+  font-size: 90px;
+  line-height: 100%;
+  color: white;
+  border-bottom: 3px solid #00BEE8;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto 50px;
+  white-space: nowrap;
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 120%;
+  color: white;
+  margin: 0;
+}
+
+p {
+  font-size: 16px;
+  color: white;
+  line-height: 120%;
+}
+
+.main {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #141D2F;
+  z-index: 1;
+  padding: 150px 100px;
+  overflow-x: clip;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+  }
+}
+
+.border-div {
+  border: 3px solid #4B47FF;
+  width: 100px;
+  border-radius: 0 3px 3px 0;
+  height: 0;
+}
+
+.contact-headline {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #141D2F;
+}
+
+.form-description {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 40%;
+  padding-left: 50px;
+}
