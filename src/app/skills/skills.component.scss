@@ -4,7 +4,7 @@
   justify-content: space-between;
   align-items: center;
   background-color: #141D2F;
-  padding: 150px 100px;
+  padding: 250px 100px 150px 100px;
   overflow-x: clip;
 }
 
@@ -48,38 +48,22 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  align-items: end;
   height: 100%;
+  text-align: end;
+  gap: 30px;
 
   h1 {
-    font-weight: 700;
-    font-size: 90px;
-    line-height: 100%;
-    color: white;
-    border-bottom: 3px solid #00BEE8;
-    width: -moz-fit-content;
-    width: fit-content;
-    margin-top: 0;
-    white-space: nowrap;
-  }
-
-  p {
-    font-size: 16px;
-    color: white;
-    line-height: 120%;
+    margin: 0;
   }
 
   button {
-    position: absolute;
     border: none;
-    bottom: -100px;
-    left: calc(50% - 100px);
     padding: 15px 30px;
     background: #00BEE8;
     color: white;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
-    width: 200px;
-    height: 58px;
     white-space: nowrap;
     display: flex;
     justify-content: center;
@@ -90,6 +74,7 @@
     line-height: 120%;
     cursor: pointer;
     transition: all 100ms ease-in-out;
+    margin-right: 100px;
 
     &:hover {
       background: #4B47FF;
@@ -100,10 +85,13 @@
   }
 }
 
+.skills-button-div {
+  display: flex;
+  align-items: center;
+  margin-right: -100px;
+}
+
 .skills-border-div {
-  position: absolute;
-  right: 0;
-  bottom: 127px;
   border: 3px solid #4B47FF;
   width: 100px;
   height: 0px;
@@ -118,18 +106,16 @@
 }
 
 @media (min-width: 1930px) {
-  .skills-description {
-    p {
-      font-size: 24px;
-    }
-  }
 
   .main {
-    padding: 150px 300px;
+    padding: 250px 300px 150px 300px;
   }
 
   .skills-border-div {
     width: 300px;
-    bottom: 125px;
+  }
+
+  .skills-button-div {
+    margin-right: -300px;
   }
 }

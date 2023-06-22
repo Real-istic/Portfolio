@@ -1,18 +1,5 @@
 h1 {
-  font-weight: 700;
-  font-size: 90px;
-  line-height: 100%;
-  color: white;
-  border-bottom: 3px solid #00BEE8;
-  width: fit-content;
   margin-top: 0;
-  white-space: nowrap;
-}
-
-p {
-  font-size: 16px;
-  color: white;
-  line-height: 120%;
 }
 
 .main {
@@ -22,7 +9,7 @@ p {
   align-items: center;
   background-color: #141D2F;
   z-index: 1;
-  padding: 150px 0 100px 100px;
+  padding: 200px 0 100px 100px;
   overflow-x: clip;
 }
 
@@ -86,7 +73,11 @@ p {
 
 @media (min-width: 1930px) {
   .main {
-    padding: 150px 300px;
+    padding: 200px 300px;
+  }
+
+  .main-left {
+    width: 50%;
   }
 
   .main-photo-wrapper {
@@ -95,10 +86,6 @@ p {
 
   .about-border-div {
     width: 400px;
-  }
-
-  p {
-    font-size: 24px;
   }
 
   .blur-img {

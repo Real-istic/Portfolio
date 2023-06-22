@@ -13,12 +13,40 @@ body {
   overflow-x: hidden;
 }
 
+h1 {
+  font-weight: 700;
+  font-size: 90px;
+  line-height: 100%;
+  color: white;
+  border-bottom: 3px solid #00BEE8;
+  width: fit-content;
+  white-space: nowrap;
+}
+
+p {
+  font-size: 16px;
+  color: white;
+  line-height: 120%;
+}
+
+@media (min-width: 1930px) {
+
+  p {
+    font-size: 24px!important;
+  }
+
+  button {
+    font-size: 32px !important;
+    height: 85px !important;
+    width: auto !important;
+  }
+}
 
 
 @font-face {
   font-family: 'Poppins';
   src: url('assets/fonts/Poppins-ExtraBoldItalic.woff2') format('woff2'),
-      url('assets/fonts/Poppins-ExtraBoldItalic.woff') format('woff');
+    url('assets/fonts/Poppins-ExtraBoldItalic.woff') format('woff');
   font-weight: bold;
   font-style: italic;
   font-display: swap;
@@ -27,7 +55,7 @@ body {
 @font-face {
   font-family: 'Poppins';
   src: url('assets/fonts/Poppins-Bold.woff2') format('woff2'),
-      url('assets/fonts/Poppins-Bold.woff') format('woff');
+    url('assets/fonts/Poppins-Bold.woff') format('woff');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -36,7 +64,7 @@ body {
 @font-face {
   font-family: 'Poppins';
   src: url('assets/fonts/Poppins-Medium.woff2') format('woff2'),
-      url('assets/fonts/Poppins-Medium.woff') format('woff');
+    url('assets/fonts/Poppins-Medium.woff') format('woff');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -45,7 +73,7 @@ body {
 @font-face {
   font-family: 'Poppins';
   src: url('assets/fonts/Poppins-SemiBold.woff2') format('woff2'),
-      url('assets/fonts/Poppins-SemiBold.woff') format('woff');
+    url('assets/fonts/Poppins-SemiBold.woff') format('woff');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -54,7 +82,7 @@ body {
 @font-face {
   font-family: 'Poppins';
   src: url('assets/fonts/Poppins-SemiBoldItalic.woff2') format('woff2'),
-      url('assets/fonts/Poppins-SemiBoldItalic.woff') format('woff');
+    url('assets/fonts/Poppins-SemiBoldItalic.woff') format('woff');
   font-weight: 600;
   font-style: italic;
   font-display: swap;
@@ -63,7 +91,7 @@ body {
 @font-face {
   font-family: 'Poppins';
   src: url('assets/fonts/Poppins-ExtraLightItalic.woff2') format('woff2'),
-      url('assets/fonts/Poppins-ExtraLightItalic.woff') format('woff');
+    url('assets/fonts/Poppins-ExtraLightItalic.woff') format('woff');
   font-weight: 200;
   font-style: italic;
   font-display: swap;
@@ -72,7 +100,7 @@ body {
 @font-face {
   font-family: 'Poppins';
   src: url('assets/fonts/Poppins-MediumItalic.woff2') format('woff2'),
-      url('assets/fonts/Poppins-MediumItalic.woff') format('woff');
+    url('assets/fonts/Poppins-MediumItalic.woff') format('woff');
   font-weight: 500;
   font-style: italic;
   font-display: swap;
@@ -81,7 +109,7 @@ body {
 @font-face {
   font-family: 'Poppins';
   src: url('assets/fonts/Poppins-BoldItalic.woff2') format('woff2'),
-      url('assets/fonts/Poppins-BoldItalic.woff') format('woff');
+    url('assets/fonts/Poppins-BoldItalic.woff') format('woff');
   font-weight: bold;
   font-style: italic;
   font-display: swap;
@@ -90,7 +118,7 @@ body {
 @font-face {
   font-family: 'Poppins';
   src: url('assets/fonts/Poppins-Black.woff2') format('woff2'),
-      url('assets/fonts/Poppins-Black.woff') format('woff');
+    url('assets/fonts/Poppins-Black.woff') format('woff');
   font-weight: 900;
   font-style: normal;
   font-display: swap;
@@ -99,7 +127,7 @@ body {
 @font-face {
   font-family: 'Poppins';
   src: url('assets/fonts/Poppins-ExtraLight.woff2') format('woff2'),
-      url('assets/fonts/Poppins-ExtraLight.woff') format('woff');
+    url('assets/fonts/Poppins-ExtraLight.woff') format('woff');
   font-weight: 200;
   font-style: normal;
   font-display: swap;
@@ -108,7 +136,7 @@ body {
 @font-face {
   font-family: 'Poppins';
   src: url('assets/fonts/Poppins-Italic.woff2') format('woff2'),
-      url('assets/fonts/Poppins-Italic.woff') format('woff');
+    url('assets/fonts/Poppins-Italic.woff') format('woff');
   font-weight: normal;
   font-style: italic;
   font-display: swap;
@@ -117,7 +145,7 @@ body {
 @font-face {
   font-family: 'Poppins';
   src: url('assets/fonts/Poppins-Thin.woff2') format('woff2'),
-      url('assets/fonts/Poppins-Thin.woff') format('woff');
+    url('assets/fonts/Poppins-Thin.woff') format('woff');
   font-weight: 100;
   font-style: normal;
   font-display: swap;
@@ -126,7 +154,7 @@ body {
 @font-face {
   font-family: 'Poppins';
   src: url('assets/fonts/Poppins-Regular.woff2') format('woff2'),
-      url('assets/fonts/Poppins-Regular.woff') format('woff');
+    url('assets/fonts/Poppins-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -135,7 +163,7 @@ body {
 @font-face {
   font-family: 'Poppins';
   src: url('assets/fonts/Poppins-LightItalic.woff2') format('woff2'),
-      url('assets/fonts/Poppins-LightItalic.woff') format('woff');
+    url('assets/fonts/Poppins-LightItalic.woff') format('woff');
   font-weight: 300;
   font-style: italic;
   font-display: swap;
@@ -144,7 +172,7 @@ body {
 @font-face {
   font-family: 'Poppins';
   src: url('assets/fonts/Poppins-Light.woff2') format('woff2'),
-      url('assets/fonts/Poppins-Light.woff') format('woff');
+    url('assets/fonts/Poppins-Light.woff') format('woff');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -153,7 +181,7 @@ body {
 @font-face {
   font-family: 'Poppins';
   src: url('assets/fonts/Poppins-BlackItalic.woff2') format('woff2'),
-      url('assets/fonts/Poppins-BlackItalic.woff') format('woff');
+    url('assets/fonts/Poppins-BlackItalic.woff') format('woff');
   font-weight: 900;
   font-style: italic;
   font-display: swap;
@@ -162,7 +190,7 @@ body {
 @font-face {
   font-family: 'Poppins';
   src: url('assets/fonts/Poppins-ThinItalic.woff2') format('woff2'),
-      url('assets/fonts/Poppins-ThinItalic.woff') format('woff');
+    url('assets/fonts/Poppins-ThinItalic.woff') format('woff');
   font-weight: 100;
   font-style: italic;
   font-display: swap;
@@ -171,9 +199,8 @@ body {
 @font-face {
   font-family: 'Poppins';
   src: url('assets/fonts/Poppins-ExtraBold.woff2') format('woff2'),
-      url('assets/fonts/Poppins-ExtraBold.woff') format('woff');
+    url('assets/fonts/Poppins-ExtraBold.woff') format('woff');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
-

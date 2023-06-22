@@ -1,19 +1,5 @@
 h1 {
-  font-weight: 700;
-  font-size: 90px;
-  line-height: 100%;
-  color: white;
-  border-bottom: 3px solid #00BEE8;
-  width: -moz-fit-content;
-  width: fit-content;
   margin: auto 50px;
-  white-space: nowrap;
-}
-
-p {
-  font-size: 16px;
-  color: white;
-  line-height: 120%;
 }
 
 .main-headline {
@@ -23,17 +9,17 @@ p {
   justify-content: center;
   background-color: #141D2F;
   overflow: hidden;
-  height: 400px;
-  padding-top: 50px;
-  padding-bottom: 75px;
+  height: 300px;
+  padding-top: 120px;
+}
 
-  p {
-    position: absolute;
-    text-align: center;
-    bottom: 0;
-    width: 400px;
-    margin-left: 100px;
-  }
+.portfolio-description {
+  text-align: center;
+  width: 100%;
+  padding: 20px 25vw 0 32vw;
+  margin: 0;
+  background-color: #141D2F;
+
 }
 
 .left-border-div {
@@ -63,9 +49,10 @@ p {
 
 .project {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-direction: row;
+  gap: 10%;
   margin: 100px 0;
   z-index: 1;
 
@@ -79,6 +66,7 @@ p {
   flex-direction: column;
   gap: 24px;
   width: 45%;
+  max-width: 700px;
   padding: 30px 0;
 }
 
@@ -173,15 +161,26 @@ p {
 }
 
 @media (min-width: 1930px) {
-  p {
-    font-size: 24px;
+
+  h3 {
+    font-size: 48px !important;
+  }
+
+  span {
+    font-size: 32px !important;
   }
 
   .main {
     padding: 200px 300px;
   }
 
-  .main-headline {
-    height: 650px;
+  .project {
+    img {
+      width: 700px;
+    }
+  }
+
+  .project-description-wrapper {
+    max-width: 1000px;
   }
 }

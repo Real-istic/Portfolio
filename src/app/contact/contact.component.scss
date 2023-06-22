@@ -16,19 +16,14 @@ h3 {
   line-height: 120%;
   color: white;
   margin: 0;
-}
-
-p {
-  font-size: 16px;
-  color: white;
-  line-height: 120%;
+  white-space: nowrap;
 }
 
 .main {
   position: relative;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   background-color: #141D2F;
   z-index: 1;
   padding: 150px 100px;
@@ -38,6 +33,7 @@ p {
     display: flex;
     flex-direction: column;
     width: 45%;
+    max-width: 700px;
   }
 }
 
@@ -59,6 +55,17 @@ p {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  width: 40%;
+  width: 35%;
   padding-left: 50px;
+}
+
+@media (min-width: 1930px) {
+
+  .main {
+    padding: 200px 300px;
+  }
+
+  .border-div {
+    width: 300px;
+  }
 }
