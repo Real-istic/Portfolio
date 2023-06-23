@@ -92,7 +92,7 @@ h1 {
 
   p {
     position: relative;
-    margin-left: 0;
+    margin: 0;
     text-align: left;
   }
 }
@@ -100,11 +100,15 @@ h1 {
 .project:nth-child(2),
 .project:nth-child(4) {
   flex-direction: row-reverse;
+  .project-buttons {
+    justify-content: flex-end;
+  }
 }
 
 .project-buttons {
   display: flex;
   justify-content: flex-start;
+  width: 100%;
   gap: 50px;
 
   button {
@@ -123,7 +127,6 @@ h1 {
     line-height: 120%;
     cursor: pointer;
     transition: all 100ms ease-in-out;
-
   }
 
   button:nth-child(1) {
@@ -139,6 +142,8 @@ h1 {
   button:nth-child(2) {
     background: none;
     border: 1px solid #00BEE8;
+    box-shadow: 0 0 3px 1px #00BEE8, inset 0 0 3px 1px #00BEE8;
+
 
     &:hover {
       background: #00BEE8;

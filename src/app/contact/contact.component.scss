@@ -8,6 +8,7 @@ h1 {
   width: fit-content;
   margin: auto 50px;
   white-space: nowrap;
+  padding-top: 150px;
 }
 
 h3 {
@@ -28,18 +29,12 @@ h3 {
   z-index: 1;
   padding: 150px 100px;
   overflow-x: clip;
-
-  form {
-    display: flex;
-    flex-direction: column;
-    width: 45%;
-    max-width: 700px;
-  }
 }
 
 .border-div {
   border: 3px solid #4B47FF;
   width: 100px;
+  margin-top: 150px;
   border-radius: 0 3px 3px 0;
   height: 0;
 }
@@ -59,8 +54,94 @@ h3 {
   padding-left: 50px;
 }
 
-@media (min-width: 1930px) {
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 45%;
+  max-width: 650px;
+  gap: 35px;
 
+  input, textarea {
+    display: flex;
+    height: 50px;
+    padding: 15px 25px;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    border: 1px solid var(--style-1-style-1-b-blues-blues-1, #4B47FF);
+    background: var(--style-1-syle-1-a-green-purple-blue-bg, #141D2F);
+    transition: all 150ms ease-in-out;
+    box-shadow: 0 0 2px 1px #4B47FF, inset 0 0 2px 1px #4B47FF;
+    color: white;
+    font-size: 16px;
+
+    &:hover {
+      border: 1px solid var(--style-1-style-1-b-blues-green, #00BEE8);
+      transition: all 150ms ease-in-out;
+      box-shadow: 0 0 3px 1px #00BEE8, inset 0 0 3px 1px #00BEE8;
+    }
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.25);
+      font-size: 16px;
+      line-height: 120%;
+    }
+
+    &:focus {
+      outline: none;
+      border: 1px solid var(--style-1-style-1-b-blues-green, #00BEE8);
+      transition: all 150ms ease-in-out;
+      box-shadow: 0 0 3px 1px #00BEE8, inset 0 0 3px 1px #00BEE8;
+    }
+  }
+
+  textarea {
+    height: 200px;
+  }
+
+  button {
+    border: none;
+    padding: 15px 30px;
+    background: #00BEE8;
+    color: white;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 120%;
+    cursor: pointer;
+    transition: all 100ms ease-in-out;
+    width: 290px;
+    text-align: start;
+
+    &:hover {
+      background: #4B47FF;
+      box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+      transition: all 150ms ease-in-out;
+      transform: scale(1.1);
+    }
+
+    span {
+      box-shadow: none;
+      margin-left: 10px;
+      transition: all 250ms ease-in-out;
+    }
+  }
+}
+
+.opacity-zero-smilie {
+  animation: rotate 0.5s forwards;
+}
+
+@media (min-width: 1930px) {
   .main {
     padding: 200px 300px;
   }
