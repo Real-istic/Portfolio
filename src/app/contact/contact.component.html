@@ -13,9 +13,12 @@
     </p>
   </div>
   <form method="POST" (submit)="sendMail()" ngNativeValidate #myForm>
-    <input #nameField required placeholder="Your name" name="name" type="text">
-    <input #emailField required placeholder="Your email" name="email" type="email">
-    <textarea #messageField required placeholder="Your Message" name="message" id="" cols="30" rows="10"></textarea>
+    <input (keyup)="checkNameValidationIcon()" #nameField required placeholder="Your name" name="name" type="text">
+    <label #labelName class="label" for="nameField"></label>
+    <input (keyup)="checkEmailValidationIcon()" #emailField required placeholder="Your email" name="email" type="email">
+    <label #labelEmail class="label" for="emailField"></label>
+    <textarea (keyup)="checkMessageValidationIcon()" #messageField required placeholder="Your Message" name="message" id="" cols="30" rows="10"></textarea>
+    <label #labelMessage class="label" for="messageField"></label>
     <button #sendButton>Send message</button>
   </form>
 </div>

@@ -55,6 +55,7 @@ h3 {
 }
 
 form {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -62,7 +63,8 @@ form {
   max-width: 650px;
   gap: 35px;
 
-  input, textarea {
+  input,
+  textarea {
     display: flex;
     height: 50px;
     padding: 15px 25px;
@@ -92,12 +94,13 @@ form {
 
     &:focus {
       outline: none;
-      border: 1px solid var(--style-1-style-1-b-blues-green, #00BEE8);
+      border: 1px solid var(--style-1-style-1-b-blues-green, #E61C40);
       transition: all 150ms ease-in-out;
-      box-shadow: 0 0 3px 1px #00BEE8, inset 0 0 3px 1px #00BEE8;
+      box-shadow: 0 0 3px 1px #E61C40, inset 0 0 3px 1px #E61C40;
     }
 
-    &:-webkit-autofill, -webkit-autofill:focus {
+    &:-webkit-autofill,
+    -webkit-autofill:focus {
       transition: background-color 600000s 0s, color 600000s 0s;
     }
   }
@@ -139,6 +142,37 @@ form {
       transition: all 250ms ease-in-out;
     }
   }
+}
+
+.label {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-size: cover;
+
+  &:nth-child(2) {
+    right: 20px;
+    top: 12px;
+  }
+
+  &:nth-child(4) {
+    right: 20px;
+    top: 98px;
+  }
+
+  &:nth-child(6) {
+    right: 20px;
+    top: 183px;
+  }
+}
+
+.valid {
+  background-image: url('/assets/img/correct.png');
+}
+
+.invalid {
+  background-image: url('/assets/img/error.png');
 }
 
 .opacity-zero-smilie {
