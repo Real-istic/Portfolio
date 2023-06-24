@@ -58,7 +58,7 @@ export class ContactComponent {
     fd.append('email', emailField.value);
     fd.append('message', messageField.value);
 
-    await fetch('https://patrizio-marzullo.developerakademie.net/portfolio/send_mail.php', {
+    await fetch('https://patriziomarzullo.de/send_mail.php', {
       method: 'POST',
       body: fd
     });
