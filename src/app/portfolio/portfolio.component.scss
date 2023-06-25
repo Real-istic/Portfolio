@@ -132,8 +132,9 @@ h1 {
     cursor: pointer;
     transition: all 100ms ease-in-out;
   }
+}
 
-  button:nth-child(1) {
+.button-test {
     background: #4B47FF;
     border: none;
 
@@ -141,18 +142,16 @@ h1 {
       background: #00BEE8;
       transition: all 150ms ease-in-out;
     }
-  }
+}
 
-  button:nth-child(2) {
-    background: none;
-    border: 1px solid #00BEE8;
-    box-shadow: 0 0 3px 1px #00BEE8, inset 0 0 3px 1px #00BEE8;
+.button-git {
+  background: none;
+  border: 1px solid #00BEE8;
+  box-shadow: 0 0 3px 1px #00BEE8, inset 0 0 3px 1px #00BEE8!important;
 
-
-    &:hover {
-      background: #00BEE8;
-      transition: all 150ms ease-in-out;
-    }
+  &:hover {
+    background: #00BEE8;
+    transition: all 150ms ease-in-out;
   }
 }
 
