@@ -3,6 +3,7 @@
   <h1>Contact</h1>
 </div>
 <div class="main">
+  <img src="assets/img/blur_contact.png" alt="">
   <div class="form-description">
     <h3>Got a problem to solve?</h3>
     <p>Contact me through this form. I'am interested in hearing you, knowing your ideas and contributing to your
@@ -17,7 +18,8 @@
     <label #labelName class="label" for="nameField"></label>
     <input (keyup)="checkEmailValidationIcon()" #emailField required placeholder="Your email" name="email" type="email">
     <label #labelEmail class="label" for="emailField"></label>
-    <textarea (keyup)="checkMessageValidationIcon()" #messageField required placeholder="Your Message" name="message" id="" cols="30" rows="10"></textarea>
+    <textarea (keyup)="checkMessageValidationIcon()" #messageField required placeholder="Your Message" name="message"
+      id="" cols="30" rows="10"></textarea>
     <label #labelMessage class="label" for="messageField"></label>
     <button #sendButton>Send message</button>
   </form>
