@@ -1,7 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
-const routes: Routes = [];
+import { MainComponent } from './main/main.component'
+import { ImprintComponent } from './imprint/imprint.component';
+const routes: Routes = [
+  { path: '', component: MainComponent },
+  { path: 'imprint', component: ImprintComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

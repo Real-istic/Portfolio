@@ -1,0 +1,17 @@
+.imprint {
+  padding: 100px 100px;
+  background: #141D2F;
+  h1 {
+    margin: 0;
+  }
+
+  a {
+    color: white;
+  }
+}
+
+@media(min-width: 1930px) {
+  .imprint {
+    padding: 100px 300px;
+  }
+}
