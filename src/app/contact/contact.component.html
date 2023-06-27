@@ -13,13 +13,16 @@
       Need a Frontend Developer? <b>Contact me!</b>
     </p>
   </div>
+  <div #sentMessage class="sent-message">Thank you! Message has been sent!</div>
   <form method="POST" (submit)="sendMail()" ngNativeValidate #myForm>
-    <input (keyup)="checkFieldValidationIcon(nameField, labelName)" #nameField required placeholder="Your name" name="name" type="text">
+    <input (keyup)="checkFieldValidationIcon(nameField, labelName)" #nameField required placeholder="Your name"
+      name="name" type="text">
     <label #labelName class="label" for="nameField"></label>
-    <input (keyup)="checkFieldValidationIcon(emailField, labelEmail)" #emailField required placeholder="Your email" name="email" type="email">
+    <input (keyup)="checkFieldValidationIcon(emailField, labelEmail)" #emailField required placeholder="Your email"
+      name="email" type="email">
     <label #labelEmail class="label" for="emailField"></label>
-    <textarea (keyup)="checkFieldValidationIcon(messageField, labelMessage)" #messageField required placeholder="Your Message" name="message"
-      id="" cols="30" rows="10"></textarea>
+    <textarea (keyup)="checkFieldValidationIcon(messageField, labelMessage)" #messageField required
+      placeholder="Your Message" name="message" id="" cols="30" rows="10"></textarea>
     <label #labelMessage class="label" for="messageField"></label>
     <button #sendButton>Send message</button>
   </form>

@@ -1,4 +1,4 @@
-import { Component, ViewChild, OnInit, ElementRef } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-contact',
@@ -10,14 +10,13 @@ export class ContactComponent {
 
   @ViewChild('myForm') myForm: any;
   @ViewChild('nameField') nameField: any;
-  @ViewChild('messageField') messageField: any;
   @ViewChild('emailField') emailField: any;
-  @ViewChild('sendButton') sendButton: any;
+  @ViewChild('messageField') messageField: any;
   @ViewChild('labelName') labelName: any;
   @ViewChild('labelEmail') labelEmail: any;
   @ViewChild('labelMessage') labelMessage: any;
-
-
+  @ViewChild('sendButton') sendButton: any;
+  @ViewChild('sentMessage') sentMessage: any;
 
   constructor() { }
 
@@ -31,10 +30,14 @@ export class ContactComponent {
       this.validateEmail(emailField)
     } else {
       this.lockForm()
-      // animation
-      await this.fetchForm(nameField, emailField, messageField)
-      // show message: Message sent
-      this.unlockForm()
+      this.myForm.nativeElement.style.transform = 'scale(0)';
+      await this.fetchForm(nameField, emailField, messageField);
+      this.sentMessage.nativeElement.style.transform = 'scale(1)';
+      this.resetForm(nameField, emailField, messageField)
+      setTimeout(() => {
+        this.myForm.nativeElement.style.transform = 'scale(1)';
+      }, 1500);
+      this.unlockForm();
     }
   }
 
@@ -64,6 +67,24 @@ export class ContactComponent {
     });
   }
 
+  resetForm(nameField: any, emailField: any, messageField: any) {
+    nameField.value = '';
+    emailField.value = '';
+    messageField.value = '';
+    nameField.classList.remove('valid-border');
+    nameField.classList.remove('invalid-border');
+    emailField.classList.remove('valid-border');
+    emailField.classList.remove('invalid-border');
+    messageField.classList.remove('valid-border');
+    messageField.classList.remove('invalid-border');
+    this.labelName.nativeElement.classList.remove('valid');
+    this.labelName.nativeElement.classList.remove('invalid');
+    this.labelEmail.nativeElement.classList.remove('valid');
+    this.labelEmail.nativeElement.classList.remove('invalid');
+    this.labelMessage.nativeElement.classList.remove('valid');
+    this.labelMessage.nativeElement.classList.remove('invalid');
+  }
+
   unlockForm() {
     this.nameField.nativeElement.disabled = false;
     this.emailField.nativeElement.disabled = false;
@@ -71,22 +92,39 @@ export class ContactComponent {
     this.sendButton.nativeElement.disabled = false;
   }
 
-checkFieldValidationIcon(field: any, label: any) {
+  checkFieldValidationIcon(field: any, label: any) {
     const isEmail = field.name === 'email';
     const hasDot = field.value.includes('.');
 
     if (isEmail && hasDot && field.checkValidity()) {
-      label.classList.add('valid');
-      label.classList.remove('invalid');
+      this.styleValidFormField(field, label)
     } else if (isEmail && !hasDot) {
-      label.classList.add('invalid');
-      label.classList.remove('valid');
+      this.styleInValidFormField(field, label)
     } else {
-      label.classList.toggle('valid', field.checkValidity());
-      label.classList.toggle('invalid', !field.checkValidity());
+      this.toggleStyleFormField(field, label)
     }
   }
 
+  styleValidFormField(field: any, label: any) {
+    field.classList.add('valid-border');
+    field.classList.remove('invalid-border');
+    label.classList.add('valid');
+    label.classList.remove('invalid');
+  }
+
+  styleInValidFormField(field: any, label: any) {
+    label.classList.add('invalid');
+    label.classList.remove('valid');
+    field.classList.toggle('valid-border');
+    field.classList.toggle('invalid-border');
+  }
+
+  toggleStyleFormField(field: any, label: any) {
+    label.classList.toggle('valid', field.checkValidity());
+    label.classList.toggle('invalid', !field.checkValidity());
+    field.classList.toggle('valid-border', field.checkValidity());
+    field.classList.toggle('invalid-border', !field.checkValidity());
+  }
 }
 
 
