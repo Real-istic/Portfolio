@@ -32,7 +32,7 @@ export class ContactComponent {
     } else {
       this.lockForm()
       // animation
-      this.fetchForm(nameField, emailField, messageField)
+      await this.fetchForm(nameField, emailField, messageField)
       // show message: Message sent
       this.unlockForm()
     }
@@ -71,43 +71,21 @@ export class ContactComponent {
     this.sendButton.nativeElement.disabled = false;
   }
 
-  checkNameValidationIcon() {
-    let labelName = this.labelName.nativeElement;
-    if (this.nameField.nativeElement.checkValidity()) {
-      labelName.classList.add('valid')
-      labelName.classList.remove('invalid')
+checkFieldValidationIcon(field: any, label: any) {
+    const isEmail = field.name === 'email';
+    const hasDot = field.value.includes('.');
 
-    } else if (!this.nameField.nativeElement.checkValidity()) {
-      labelName.classList.add('invalid')
-      labelName.classList.remove('valid')
+    if (isEmail && hasDot && field.checkValidity()) {
+      label.classList.add('valid');
+      label.classList.remove('invalid');
+    } else if (isEmail && !hasDot) {
+      label.classList.add('invalid');
+      label.classList.remove('valid');
+    } else {
+      label.classList.toggle('valid', field.checkValidity());
+      label.classList.toggle('invalid', !field.checkValidity());
     }
   }
-
-  checkEmailValidationIcon() {
-    let labelEmail = this.labelEmail.nativeElement;
-    let emailField = this.emailField.nativeElement;
-    if (emailField.checkValidity() && emailField.value.includes('.')) {
-      labelEmail.classList.add('valid')
-      labelEmail.classList.remove('invalid')
-
-    } else if (!emailField.checkValidity() || !emailField.value.includes('.')) {
-      labelEmail.classList.add('invalid')
-      labelEmail.classList.remove('valid')
-    }
-  }
-
-  checkMessageValidationIcon() {
-    let labelMessage = this.labelMessage.nativeElement;
-    if (this.messageField.nativeElement.checkValidity()) {
-      labelMessage.classList.add('valid')
-      labelMessage.classList.remove('invalid')
-
-    } else if (!this.messageField.nativeElement.checkValidity()) {
-      labelMessage.classList.add('invalid')
-      labelMessage.classList.remove('valid')
-    }
-  }
-
 
 }
 
