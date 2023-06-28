@@ -37,6 +37,15 @@ export class ContactComponent {
       setTimeout(() => {
         this.myForm.nativeElement.style.transform = 'scale(1)';
       }, 1500);
+      setTimeout(() => {
+        this.sentMessage.nativeElement.style.transform = 'translatex(-500px) translateY(200px)';
+      }, 1300);
+      setTimeout(() => {
+        this.sentMessage.nativeElement.style.transform = 'scale(0.01) translateX(-500px) translateY(200px)';
+        setTimeout(() => {
+          this.sentMessage.nativeElement.style.transform = 'scale(0) translateX(-500px) translateY(200px)';
+        }, 200);
+      }, 3000);
       this.unlockForm();
     }
   }
@@ -68,21 +77,13 @@ export class ContactComponent {
   }
 
   resetForm(nameField: any, emailField: any, messageField: any) {
-    nameField.value = '';
-    emailField.value = '';
-    messageField.value = '';
-    nameField.classList.remove('valid-border');
-    nameField.classList.remove('invalid-border');
-    emailField.classList.remove('valid-border');
-    emailField.classList.remove('invalid-border');
-    messageField.classList.remove('valid-border');
-    messageField.classList.remove('invalid-border');
-    this.labelName.nativeElement.classList.remove('valid');
-    this.labelName.nativeElement.classList.remove('invalid');
-    this.labelEmail.nativeElement.classList.remove('valid');
-    this.labelEmail.nativeElement.classList.remove('invalid');
-    this.labelMessage.nativeElement.classList.remove('valid');
-    this.labelMessage.nativeElement.classList.remove('invalid');
+    [nameField, emailField, messageField].forEach(field => {
+      field.value = '';
+      field.classList.remove('valid-border', 'invalid-border');
+    });
+
+    [this.labelName.nativeElement, this.labelEmail.nativeElement, this.labelMessage.nativeElement]
+      .forEach(label => label.classList.remove('valid', 'invalid'));
   }
 
   unlockForm() {
@@ -99,7 +100,7 @@ export class ContactComponent {
     if (isEmail && hasDot && field.checkValidity()) {
       this.styleValidFormField(field, label)
     } else if (isEmail && !hasDot) {
-      this.styleInValidFormField(field, label)
+      this.styleInvalidFormField(field, label)
     } else {
       this.toggleStyleFormField(field, label)
     }
@@ -112,7 +113,7 @@ export class ContactComponent {
     label.classList.remove('invalid');
   }
 
-  styleInValidFormField(field: any, label: any) {
+  styleInvalidFormField(field: any, label: any) {
     label.classList.add('invalid');
     label.classList.remove('valid');
     field.classList.toggle('valid-border');

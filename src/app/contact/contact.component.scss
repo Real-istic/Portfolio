@@ -70,7 +70,7 @@ form {
   width: 45%;
   max-width: 650px;
   gap: 35px;
-  transition: all 150ms ease-in-out;
+  transition: all 200ms ease-in-out;
 
   input,
   textarea {
@@ -179,7 +179,7 @@ form {
   white-space: nowrap;
   padding: 15px;
   transform: scale(0);
-  transition: all 150ms ease-in-out;
+  transition: all 200ms ease-in-out;
   z-index: 1;
 }
 
@@ -212,10 +212,6 @@ form {
 
 .invalid {
   background-image: url('^assets/img/error.png');
-}
-
-.opacity-zero-smilie {
-  animation: rotate 0.5s forwards;
 }
 
 @media (min-width: 1930px) {
