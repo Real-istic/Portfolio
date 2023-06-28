@@ -41,9 +41,9 @@ export class ContactComponent {
         this.sentMessage.nativeElement.style.transform = 'translatex(-500px) translateY(200px)';
       }, 1300);
       setTimeout(() => {
-        this.sentMessage.nativeElement.style.transform = 'scale(0.01) translateX(-500px) translateY(200px)';
+        this.sentMessage.nativeElement.style.transform = 'scale(0.01)';
         setTimeout(() => {
-          this.sentMessage.nativeElement.style.transform = 'scale(0) translateX(-500px) translateY(200px)';
+          this.sentMessage.nativeElement.style.transform = 'scale(0)';
         }, 200);
       }, 3000);
       this.unlockForm();
