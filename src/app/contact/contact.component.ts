@@ -34,20 +34,24 @@ export class ContactComponent {
       await this.fetchForm(nameField, emailField, messageField);
       this.sentMessage.nativeElement.style.transform = 'scale(1)';
       this.resetForm(nameField, emailField, messageField)
-      setTimeout(() => {
-        this.myForm.nativeElement.style.transform = 'scale(1)';
-      }, 1500);
-      setTimeout(() => {
-        this.sentMessage.nativeElement.style.transform = 'translatex(-500px) translateY(200px)';
-      }, 1300);
-      setTimeout(() => {
-        this.sentMessage.nativeElement.style.transform = 'scale(0.01)';
-        setTimeout(() => {
-          this.sentMessage.nativeElement.style.transform = 'scale(0)';
-        }, 200);
-      }, 3000);
+      await this.animateFormAndSentMessage()
       this.unlockForm();
     }
+  }
+
+  async animateFormAndSentMessage() {
+    setTimeout(() => {
+      this.myForm.nativeElement.style.transform = 'scale(1)';
+    }, 1500);
+    setTimeout(() => {
+      this.sentMessage.nativeElement.style.transform = 'translateY(-250px)';
+    }, 1300);
+    setTimeout(() => {
+      this.sentMessage.nativeElement.style.transform = 'scale(0.001)';
+      setTimeout(() => {
+        this.sentMessage.nativeElement.style.transform = 'scale(0)';
+      }, 200);
+    }, 3000);
   }
 
   validateEmail(emailField: any) {
