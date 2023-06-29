@@ -1,7 +1,12 @@
 <div id="topPage" style="opacity: 0; z-index: -1;"></div>
 <header>
   <a href="#topPage"><img src="assets/img/PM_logo_transp.png" alt=""></a>
-  <div class="menu-right">
+  <div #respMenu (click)="toggleResponsiveMenu()" class="menu-right-responsive">
+    <img class="bar1" #bar1 src="assets/img/hz-line.png">
+    <img class="bar2" #bar2 src="assets/img/hz-line.png">
+    <img class="bar3" #bar3 src="assets/img/hz-line.png">
+  </div>
+  <div #menuRight class="menu-right hide">
     <div class="menu-mirror-div">
       <a (mouseover)="vanishAbout.classList.add('opacity-zero')"
         (mouseout)="vanishAbout.classList.remove('opacity-zero')" href="#aboutMe">About Me</a>
