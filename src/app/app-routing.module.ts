@@ -4,7 +4,7 @@ import { MainComponent } from './main/main.component'
 import { ImprintComponent } from './imprint/imprint.component';
 const routes: Routes = [
   { path: '', component: MainComponent },
-  { path: 'imprint', component: ImprintComponent },
+  { path: 'imprint', component: ImprintComponent, data: { scrollPositionRestoration: 'enabled' } },
 ];
 
 @NgModule({
