@@ -109,6 +109,20 @@
   z-index: 1;
 }
 
+@media (max-width: 1250px) {
+  .skills-description button {
+    margin-right: 0;
+  }
+
+  .skills-border-div {
+    border-radius: 0;
+  }
+
+  .skills-wrapper {
+    width: 20px;
+  }
+}
+
 @media (min-width: 1930px) {
 
   .main {

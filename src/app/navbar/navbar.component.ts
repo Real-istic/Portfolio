@@ -15,7 +15,7 @@ export class NavbarComponent {
 
   toggleResponsiveMenu() {
     let menuRight = this.menuRight.nativeElement;
-    menuRight.classList.toggle('hide');
+    menuRight.classList.toggle('show');
     this.toggleResponsiveMenuIcon();
   }
 

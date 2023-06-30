@@ -70,6 +70,20 @@ footer {
   }
 }
 
+@media (max-width: 1250px) {
+  footer {
+    padding: 0 20px;
+
+    img {
+      height: 60px;
+    }
+  }
+
+  .footer-left a {
+    font-size: 18px!important;
+  }
+}
+
 @media (min-width: 1930px) {
 
   .footer-left a {

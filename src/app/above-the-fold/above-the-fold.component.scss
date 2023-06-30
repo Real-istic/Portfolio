@@ -108,6 +108,7 @@
   gap: 42px;
   z-index: 3;
   height: 70px;
+  // background-color: #141D2F;
 
   svg {
     cursor: pointer;
@@ -219,6 +220,37 @@
 
   100% {
     transform: translateX(0px) rotate(-90deg) scale(1.1);
+  }
+}
+
+@media (max-width: 1250px) {
+  .main {
+    // align-items: flex-start;
+    // justify-content: center;
+  }
+
+  .main-photo {
+    // width: 300px;
+  }
+
+  .main-right {
+    // position: absolute;
+    // bottom: 0;
+    >span {
+      font-size: 39px;
+    }
+  }
+
+  .main-right-name {
+    font-size: 50px;
+  }
+
+  .main-right-job {
+    font-size: 40px;
+  }
+
+  .banner {
+    // bottom: -125px;
   }
 }
 
