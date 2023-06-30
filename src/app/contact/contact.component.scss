@@ -145,7 +145,6 @@ form {
     line-height: 120%;
     cursor: pointer;
     transition: all 100ms ease-in-out;
-    width: 290px;
     text-align: start;
 
     &:hover {
@@ -212,6 +211,46 @@ form {
 
 .invalid {
   background-image: url('^assets/img/error.png');
+}
+
+@media (max-width: 1250px) {
+  .form-description {
+    width: 50%;
+  }
+}
+
+@media (max-width: 1000px) {
+
+  img {
+    width: 800px;
+  }
+
+  .main {
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    padding: 100px 20px;
+  }
+
+  .form-description {
+    width: 100%;
+    max-width: 650px;
+    padding-left: 0;
+  }
+
+  form {
+    width: 100%;
+    button {
+      font-size: 20px;
+      padding: 15px 20px;
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  h1 {
+    margin: auto 0;
+  }
 }
 
 @media (min-width: 1930px) {

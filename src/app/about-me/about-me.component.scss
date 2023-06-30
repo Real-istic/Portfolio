@@ -27,8 +27,8 @@ h1 {
   div {
     display: flex;
     align-items: center;
-    justify-content: space-around;
     gap: 25px;
+    justify-content: flex-start;
   }
 }
 
@@ -100,6 +100,34 @@ h1 {
 
   .about-border-div {
     width: 20%;
+  }
+}
+
+@media (max-width: 1000px) {
+
+  p {
+    max-width: 500px;
+  }
+
+  .main {
+    padding: 200px 20px 100px 20px;
+  }
+
+  .main-left {
+    width: 100%;
+    z-index: 2;
+  }
+
+  .main-photo-wrapper {
+    width: 0;
+  }
+
+  .main-photo {
+    display: none;
+  }
+
+  .about-border-div {
+    display: none;
   }
 }
 

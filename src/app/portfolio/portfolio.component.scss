@@ -100,10 +100,20 @@ h1 {
 .project:nth-child(2),
 .project:nth-child(4) {
   flex-direction: row-reverse;
+
+  .project-description {
+    align-items: flex-end;
+    p {
+      text-align: right;
+    }
+  }
+
   .project-buttons {
     justify-content: flex-end;
   }
 }
+
+
 
 .project-buttons {
   display: flex;
@@ -131,23 +141,24 @@ h1 {
     line-height: 120%;
     cursor: pointer;
     transition: all 100ms ease-in-out;
+    width: 155px;
   }
 }
 
 .button-test {
-    background: #4B47FF;
-    border: none;
+  background: #4B47FF;
+  border: none;
 
-    &:hover {
-      background: #00BEE8;
-      transition: all 150ms ease-in-out;
-    }
+  &:hover {
+    background: #00BEE8;
+    transition: all 150ms ease-in-out;
+  }
 }
 
 .button-git {
-  background: none;
+  background-color: #141d2f51;
   border: 1px solid #00BEE8;
-  box-shadow: 0 0 3px 1px #00BEE8, inset 0 0 3px 1px #00BEE8!important;
+  box-shadow: 0 0 3px 1px #00BEE8, inset 0 0 3px 1px #00BEE8 !important;
 
   &:hover {
     background: #00BEE8;
@@ -166,6 +177,72 @@ h1 {
   position: absolute;
   left: -200px;
   bottom: 400px
+}
+
+@media (max-width: 1000px) {
+  .portfolio-description {
+    padding: 20px 15vw 0 22vw;
+  }
+
+  .project {
+    flex-direction: column !important;
+  }
+
+  .project-description {
+    align-items: center!important;
+    p {
+      text-align: center!important;
+    }
+  }
+
+  .project-description-wrapper {
+    width: 100%;
+  }
+
+  .project-buttons {
+    justify-content: center !important;
+  }
+}
+
+@media (max-width: 550px) {
+
+  .main-headline {
+    h1 {
+      margin: auto 20px;
+    }
+  }
+
+  .portfolio-description {
+    padding: 20px 5vw 0 5vw;
+  }
+
+  .left-border-div {
+    width: 25%;
+  }
+
+  .right-border-div {
+    margin-right: 0;
+    width: 25%;
+  }
+
+  .project {
+    img {
+      width: 95%;
+    }
+  }
+
+  .project-buttons {
+    button {
+      gap: 20px;
+      font-size: 20px;
+      padding: 15px 20px;
+      width: 120px;
+    }
+  }
+
+  .blur-img-2 {
+    bottom: 200px
+  }
 }
 
 @media (min-width: 1930px) {

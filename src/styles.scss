@@ -29,6 +29,18 @@ p {
   line-height: 120%;
 }
 
+@media (min-width: 1930px) {
+  p {
+    font-size: 24px!important;
+  }
+
+  button {
+    font-size: 32px !important;
+    height: 85px !important;
+    width: auto !important;
+  }
+}
+
 @media (max-width: 1250px) {
   h1 {
     font-size: 55px!important;
@@ -43,18 +55,26 @@ p {
   }
 }
 
-@media (min-width: 1930px) {
-  p {
-    font-size: 24px!important;
+@media (max-width: 1000px) {
+  h1 {
+    font-size: 40px;
   }
 
-  button {
-    font-size: 32px !important;
-    height: 85px !important;
-    width: auto !important;
+  h3 {
+    font-size: 22px!important;
   }
 }
 
+@media (max-width: 550px) {
+  .contact-headline {
+    padding: 0 20px;
+  }
+
+  .border-div {
+    display: none;
+  }
+
+}
 
 @font-face {
   font-family: 'Poppins';
