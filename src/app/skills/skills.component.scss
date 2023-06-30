@@ -194,6 +194,12 @@
   }
 }
 
+@media (max-width: 500px) {
+  .skills-left {
+    justify-content: center;
+  }
+}
+
 @media (min-width: 1930px) {
 
   .main {

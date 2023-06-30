@@ -125,7 +125,7 @@ header {
   }
 
   .menu-right {
-    position: absolute;
+    position: fixed;
     right: 0;
     top: 0;
     padding: 150px 0 250px 0;
@@ -135,11 +135,11 @@ header {
     justify-content: center;
     gap: 50px;
     max-width: 100vw;
-    width: 400px;
+    width: 450px;
     height: 100vh;
     background: var(--style-1-syle-1-a-green-purple-blue-transparency, rgba(20, 29, 47, 0.98));
     transition: all 0.2s ease;
-    transform: translateX(400px);
+    transform: translateX(500px);
   }
 
   .menu-right-responsive {
