@@ -223,19 +223,28 @@
   }
 }
 
+
+@media (max-width: 1400px) {
+  .main {
+    padding: 0 10px;
+  }
+}
+
 @media (max-width: 1250px) {
   .main {
-    // align-items: flex-start;
-    // justify-content: center;
+    align-items: flex-start;
+    justify-content: center;
   }
 
   .main-photo {
-    // width: 300px;
+    width: 300px;
   }
 
   .main-right {
-    // position: absolute;
-    // bottom: 0;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 0;
+
     >span {
       font-size: 39px;
     }
@@ -248,17 +257,44 @@
   .main-right-job {
     font-size: 40px;
   }
+}
+
+@media (max-width: 1000px) {
+  .main-right {
+    width: 100%;
+    background-color: #141D2F;
+    padding: 20px 0;
+    bottom: 100px;
+    >span {
+      font-size: 25px;
+    }
+  }
+
+  .main-right-name {
+    font-size: 30px;
+  }
+
+  .main-right-job {
+    font-size: 24px;
+  }
 
   .banner {
-    // bottom: -125px;
+    bottom: 150px;
+    height: 150px;
+  }
+
+  .main-right-headline {
+    button {
+      padding: 15px 20px;
+      font-size: 20px;
+    }
+  }
+
+  .scroll-down {
+    display: none;
   }
 }
 
-@media (max-width: 1400px) {
-  .main {
-    padding: 0 10px;
-  }
-}
 
 @media (min-width: 1930px) {
 
@@ -281,7 +317,7 @@
     font-size: 90px;
   }
 
-  .main-right > span {
+  .main-right>span {
     font-size: 64px;
   }
 
