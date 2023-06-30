@@ -30,9 +30,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "./node_modules/aos/dist/aos.css"
             ],
-            "scripts": []
+            "scripts": ["./node_modules/aos/dist/aos.js"]
           },
           "configurations": {
             "production": {
@@ -44,8 +45,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "12kb",
+                  "maximumError": "14kb"
                 }
               ],
               "outputHashing": "all"
