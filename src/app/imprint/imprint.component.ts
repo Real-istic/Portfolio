@@ -11,6 +11,9 @@ export class ImprintComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {}
 
+  /**
+   * function to scroll to the top of the page
+   */
   ngAfterViewInit(): void {
     window.scrollTo(0, 0);
   }

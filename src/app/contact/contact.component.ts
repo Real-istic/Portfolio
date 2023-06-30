@@ -22,6 +22,9 @@ export class ContactComponent {
 
   ngOnInit(): void { }
 
+  /**
+   * function to send the form data to the backend
+   */
   async sendMail() {
     let nameField = this.nameField.nativeElement;
     let emailField = this.emailField.nativeElement;
@@ -39,6 +42,9 @@ export class ContactComponent {
     }
   }
 
+  /**
+   * function to animate the form and the sent message
+   */
   async animateFormAndSentMessage() {
     setTimeout(() => {
       this.myForm.nativeElement.style.transform = 'scale(1)';
@@ -54,6 +60,12 @@ export class ContactComponent {
     }, 3000);
   }
 
+  /**
+   * function to validate the email field
+   *
+   * @param emailField the email field to validate
+   *
+   */
   validateEmail(emailField: any) {
     emailField.checkValidity()
     emailField.setCustomValidity('Please enter a valid email address');
@@ -61,6 +73,9 @@ export class ContactComponent {
     return
   }
 
+  /**
+   * function to lock the form
+   */
   lockForm() {
     this.nameField.nativeElement.disabled = true;
     this.emailField.nativeElement.disabled = true;
@@ -68,6 +83,13 @@ export class ContactComponent {
     this.sendButton.nativeElement.disabled = true;
   }
 
+  /**
+   * function to fetch the form data
+   *
+   * @param nameField the name field
+   * @param emailField the email field
+   * @param messageField the message field
+   */
   async fetchForm(nameField: any, emailField: any, messageField: any) {
     let fd = new FormData();
     fd.append('name', nameField.value);
@@ -80,6 +102,13 @@ export class ContactComponent {
     });
   }
 
+  /**
+   * function to reset the form
+   *
+   * @param nameField the name field
+   * @param emailField the email field
+   * @param messageField the message field
+   */
   resetForm(nameField: any, emailField: any, messageField: any) {
     [nameField, emailField, messageField].forEach(field => {
       field.value = '';
@@ -90,6 +119,10 @@ export class ContactComponent {
       .forEach(label => label.classList.remove('valid', 'invalid'));
   }
 
+  /**
+   * function to unlock the form
+   *
+   */
   unlockForm() {
     this.nameField.nativeElement.disabled = false;
     this.emailField.nativeElement.disabled = false;
@@ -97,6 +130,12 @@ export class ContactComponent {
     this.sendButton.nativeElement.disabled = false;
   }
 
+  /**
+   * function to check and toggle the field validation icon
+   *
+   * @param field the inputfield
+   * @param label the ValidationIcon label
+   */
   checkFieldValidationIcon(field: any, label: any) {
     const isEmail = field.name === 'email';
     const hasDot = field.value.includes('.');
@@ -110,6 +149,12 @@ export class ContactComponent {
     }
   }
 
+  /**
+   * function to style the form field as valid
+   *
+   * @param field the inputfield
+   * @param label the ValidationIcon label
+   */
   styleValidFormField(field: any, label: any) {
     field.classList.add('valid-border');
     field.classList.remove('invalid-border');
@@ -117,6 +162,12 @@ export class ContactComponent {
     label.classList.remove('invalid');
   }
 
+  /**
+   * function to style the form field as invalid
+   *
+   * @param field the inputfield
+   * @param label the ValidationIcon label
+   */
   styleInvalidFormField(field: any, label: any) {
     label.classList.add('invalid');
     label.classList.remove('valid');
@@ -124,6 +175,12 @@ export class ContactComponent {
     field.classList.toggle('invalid-border');
   }
 
+  /**
+   * function to toggle the form field style
+   *
+   * @param field the inputfield
+   * @param label the ValidationIcon label
+   */
   toggleStyleFormField(field: any, label: any) {
     label.classList.toggle('valid', field.checkValidity());
     label.classList.toggle('invalid', !field.checkValidity());

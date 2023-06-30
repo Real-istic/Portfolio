@@ -13,12 +13,19 @@ export class NavbarComponent {
   @ViewChild('bar2') bar2: any;
   @ViewChild('bar3') bar3: any;
 
+  /**
+   * function to toggle the responsive menu
+   *
+   */
   toggleResponsiveMenu() {
     let menuRight = this.menuRight.nativeElement;
     menuRight.classList.toggle('show');
     this.toggleResponsiveMenuIcon();
   }
 
+  /**
+   * function to toggle the responsive menu icon
+   */
   toggleResponsiveMenuIcon() {
     let bar1 = this.bar1.nativeElement;
     let bar2 = this.bar2.nativeElement;
