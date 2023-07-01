@@ -4,7 +4,7 @@
 </div>
 <div class="main">
   <img src="assets/img/blur_contact.png" alt="">
-  <div data-aos-offset="300" data-aos-duration="1000" data-aos="fade-up" class="form-description">
+  <div data-aos-offset="100" data-aos-duration="1000" data-aos="fade-up" class="form-description">
     <h3>Got a problem to solve?</h3>
     <p>Contact me through this form. I'am interested in hearing you, knowing your ideas and contributing to your
       projects with my work.
@@ -14,7 +14,7 @@
     </p>
   </div>
   <div #sentMessage class="sent-message">Thank you! Message has been sent!</div>
-  <form data-aos-offset="300" data-aos-duration="1000" data-aos="fade-left" method="POST" (submit)="sendMail()" ngNativeValidate #myForm>
+  <form data-aos-offset="100" data-aos-duration="1000" data-aos="fade-left" method="POST" (submit)="sendMail()" ngNativeValidate #myForm>
     <input (keyup)="checkFieldValidationIcon(nameField, labelName)" #nameField required placeholder="Your name"
       name="name" type="text">
     <label #labelName class="label" for="nameField"></label>
