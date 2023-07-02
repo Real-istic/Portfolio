@@ -29,9 +29,9 @@ export class ContactComponent {
     let nameField = this.nameField.nativeElement;
     let emailField = this.emailField.nativeElement;
     let messageField = this.messageField.nativeElement;
-    if (!emailField.value.includes('.')) {
+    if (!emailField.value.includes('.') && emailField.checkValidity()) {
       this.validateEmail(emailField)
-    } else {
+    } else if (emailField.value.includes('.') && emailField.checkValidity()) {
       this.lockForm()
       this.myForm.nativeElement.style.transform = 'scale(0)';
       await this.fetchForm(nameField, emailField, messageField);
@@ -41,6 +41,7 @@ export class ContactComponent {
       this.unlockForm();
     }
   }
+
 
   /**
    * function to animate the form and the sent message
@@ -60,6 +61,7 @@ export class ContactComponent {
     }, 3000);
   }
 
+
   /**
    * function to validate the email field
    *
@@ -68,10 +70,11 @@ export class ContactComponent {
    */
   validateEmail(emailField: any) {
     emailField.checkValidity()
-    emailField.setCustomValidity('Please enter a valid email address');
+    // emailField.setCustomValidity('Please enter a valid email address');
     emailField.reportValidity();
     return
   }
+
 
   /**
    * function to lock the form
@@ -82,6 +85,7 @@ export class ContactComponent {
     this.messageField.nativeElement.disabled = true;
     this.sendButton.nativeElement.disabled = true;
   }
+
 
   /**
    * function to fetch the form data
@@ -102,6 +106,7 @@ export class ContactComponent {
     });
   }
 
+
   /**
    * function to reset the form
    *
@@ -119,6 +124,7 @@ export class ContactComponent {
       .forEach(label => label.classList.remove('valid', 'invalid'));
   }
 
+
   /**
    * function to unlock the form
    *
@@ -129,6 +135,7 @@ export class ContactComponent {
     this.messageField.nativeElement.disabled = false;
     this.sendButton.nativeElement.disabled = false;
   }
+
 
   /**
    * function to check and toggle the field validation icon
@@ -144,10 +151,11 @@ export class ContactComponent {
       this.styleValidFormField(field, label)
     } else if (isEmail && !hasDot) {
       this.styleInvalidFormField(field, label)
-    } else {
+    } else if (!isEmail) {
       this.toggleStyleFormField(field, label)
     }
   }
+
 
   /**
    * function to style the form field as valid
@@ -160,7 +168,10 @@ export class ContactComponent {
     field.classList.remove('invalid-border');
     label.classList.add('valid');
     label.classList.remove('invalid');
+    field.classList.add('valid-border', field.checkValidity());
+    field.classList.remove('invalid-border', !field.checkValidity());
   }
+
 
   /**
    * function to style the form field as invalid
@@ -169,12 +180,15 @@ export class ContactComponent {
    * @param label the ValidationIcon label
    */
   styleInvalidFormField(field: any, label: any) {
+    field.classList.remove('valid-border');
+    field.classList.add('invalid-border');
     label.classList.add('invalid');
     label.classList.remove('valid');
-    field.classList.toggle('valid-border');
-    field.classList.toggle('invalid-border');
+    field.classList.remove('valid-border', field.checkValidity());
+    field.classList.add('invalid-border', !field.checkValidity());
   }
 
+  
   /**
    * function to toggle the form field style
    *

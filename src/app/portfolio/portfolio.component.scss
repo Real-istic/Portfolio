@@ -43,7 +43,7 @@ h1 {
   align-items: center;
   justify-content: center;
   background-color: #141D2F;
-  padding: 75px 100px;
+  padding: 75px 100px 0 100px;
   overflow-x: clip;
 }
 
@@ -179,6 +179,12 @@ h1 {
   bottom: 400px
 }
 
+@media (max-width: 1250px) {
+  .project {
+    gap: 5%;
+   }
+}
+
 @media (max-width: 1000px) {
   .portfolio-description {
     padding: 20px 15vw 0 22vw;
@@ -207,8 +213,10 @@ h1 {
 @media (max-width: 550px) {
 
   .main-headline {
+    margin-top: -100px;
     h1 {
       margin: auto 20px;
+      padding: 0;
     }
   }
 
@@ -256,7 +264,7 @@ h1 {
   }
 
   .main {
-    padding: 200px 300px;
+    padding: 150px 300px;
   }
 
   .project {

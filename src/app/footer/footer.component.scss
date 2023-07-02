@@ -72,7 +72,7 @@ footer {
 
 @media (max-width: 1250px) {
   footer {
-    padding: 0 20px;
+    padding: 0 50px;
 
     img {
       height: 60px;
@@ -80,13 +80,14 @@ footer {
   }
 }
 
-@media (max-width: 750px) {
+@media (max-width: 800px) {
   footer {
     padding: 20px 20px 40px 20px;
     flex-direction: column;
     justify-content: center;
     gap: 20px;
     height: 350px;
+
     span {
       font-size: 22px;
       margin-top: 30px;
@@ -102,7 +103,7 @@ footer {
   .imprint {
     position: absolute;
     bottom: 40px;
-    font-size: 18px!important;
+    font-size: 18px !important;
     height: 32px;
     padding: 0;
   }

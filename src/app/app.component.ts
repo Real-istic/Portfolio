@@ -12,6 +12,10 @@ export class AppComponent {
   constructor(public router: Router) { }
 
   ngOnInit() {
-     AOS.init();
+    AOS.init(
+      {
+        once: true
+      }
+    );
   }
 }

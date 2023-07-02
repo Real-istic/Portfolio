@@ -85,6 +85,11 @@ h1 {
 }
 
 @media (max-width: 1250px) {
+
+  .main {
+    padding: 200px 0px 100px 50px;
+  }
+
   .main-photo-wrapper {
     width: 45%;
   }
@@ -110,7 +115,7 @@ h1 {
   }
 
   .main {
-    padding: 200px 20px 100px 20px;
+    padding: 200px 50px 100px 50px;
   }
 
   .main-left {
@@ -132,6 +137,12 @@ h1 {
 
   .blur-img {
    bottom: -500px;
+  }
+}
+
+@media (max-width: 550px) {
+  .main {
+    padding: 200px 20px 100px 20px;
   }
 }
 
