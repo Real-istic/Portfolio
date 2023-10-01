@@ -9,7 +9,7 @@ header {
   padding: 10px 100px 0 100px;
   justify-content: space-between;
   background: #141D2F;
-  height: 110px;
+  height: 120px;
 
   a {
     z-index: 1;
@@ -177,18 +177,21 @@ header {
   }
 }
 
-  @media (min-width: 1930px) {
-    header {
-      padding: 10px 300px 0 300px;
+@media (min-width: 1930px) {
+  header {
+    padding: 10px 300px 0 300px;
+  }
+
+  .menu-mirror-div {
+    height: 50px;
+    margin-top: -20px;
+
+    a {
+      font-size: 36px;
     }
 
-    .menu-mirror-div {
-      a {
-        font-size: 36px;
-      }
-
-      span {
-        font-size: 36px;
-      }
+    span {
+      font-size: 36px;
     }
   }
+}
