@@ -103,6 +103,7 @@ h1 {
 
   .project-description {
     align-items: flex-end;
+
     p {
       text-align: right;
     }
@@ -112,8 +113,6 @@ h1 {
     justify-content: flex-end;
   }
 }
-
-
 
 .project-buttons {
   display: flex;
@@ -182,7 +181,7 @@ h1 {
 @media (max-width: 1250px) {
   .project {
     gap: 5%;
-   }
+  }
 }
 
 @media (max-width: 1000px) {
@@ -195,9 +194,14 @@ h1 {
   }
 
   .project-description {
-    align-items: center!important;
+    align-items: center !important;
+
     p {
-      text-align: center!important;
+      text-align: center !important;
+    }
+
+    span {
+      text-align: center !important;
     }
   }
 
@@ -211,9 +215,9 @@ h1 {
 }
 
 @media (max-width: 550px) {
-
   .main-headline {
     margin-top: -100px;
+
     h1 {
       margin: auto 20px;
       padding: 0;
@@ -254,7 +258,6 @@ h1 {
 }
 
 @media (min-width: 1930px) {
-
   h3 {
     font-size: 48px !important;
   }
