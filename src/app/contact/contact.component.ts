@@ -1,52 +1,45 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.scss']
+  styleUrls: ['./contact.component.scss'],
 })
-
 export class ContactComponent {
-
-  @ViewChild('myForm') myForm: any;
-  @ViewChild('nameField') nameField: any;
-  @ViewChild('emailField') emailField: any;
-  @ViewChild('messageField') messageField: any;
-  @ViewChild('labelName') labelName: any;
-  @ViewChild('labelEmail') labelEmail: any;
-  @ViewChild('labelMessage') labelMessage: any;
-  @ViewChild('sendButton') sendButton: any;
-  @ViewChild('sentMessage') sentMessage: any;
-
-  constructor() { }
-
-  ngOnInit(): void { }
+  @ViewChild('myForm') myForm!: ElementRef;
+  @ViewChild('nameField') nameField!: ElementRef;
+  @ViewChild('emailField') emailField!: ElementRef;
+  @ViewChild('messageField') messageField!: ElementRef;
+  @ViewChild('labelName') labelName!: ElementRef;
+  @ViewChild('labelEmail') labelEmail!: ElementRef;
+  @ViewChild('labelMessage') labelMessage!: ElementRef;
+  @ViewChild('sendButton') sendButton!: ElementRef;
+  @ViewChild('sentMessage') sentMessage!: ElementRef;
 
   /**
    * function to send the form data to the backend
    */
-  async sendMail() {
+  protected async sendMail(): Promise<void> {
     let nameField = this.nameField.nativeElement;
     let emailField = this.emailField.nativeElement;
     let messageField = this.messageField.nativeElement;
     if (!emailField.value.includes('.') && emailField.checkValidity()) {
-      this.validateEmail(emailField)
+      this.validateEmail(emailField);
     } else if (emailField.value.includes('.') && emailField.checkValidity()) {
-      this.lockForm()
+      this.lockForm();
       this.myForm.nativeElement.style.transform = 'scale(0)';
       await this.fetchForm(nameField, emailField, messageField);
       this.sentMessage.nativeElement.style.transform = 'scale(1)';
-      this.resetForm(nameField, emailField, messageField)
-      await this.animateFormAndSentMessage()
+      this.resetForm(nameField, emailField, messageField);
+      await this.animateFormAndSentMessage();
       this.unlockForm();
     }
   }
 
-
   /**
-   * function to animate the form and the sent message
+   * function to animate the form and send the message
    */
-  async animateFormAndSentMessage() {
+  async animateFormAndSentMessage(): Promise<void> {
     setTimeout(() => {
       this.myForm.nativeElement.style.transform = 'scale(1)';
     }, 1500);
@@ -61,31 +54,25 @@ export class ContactComponent {
     }, 3000);
   }
 
-
   /**
    * function to validate the email field
    *
    * @param emailField the email field to validate
    *
    */
-  validateEmail(emailField: any) {
-    emailField.checkValidity()
-    // emailField.setCustomValidity('Please enter a valid email address');
-    emailField.reportValidity();
-    return
+  private validateEmail(emailField: HTMLInputElement): void {
+    emailField.checkValidity();
   }
-
 
   /**
    * function to lock the form
    */
-  lockForm() {
+  private lockForm(): void {
     this.nameField.nativeElement.disabled = true;
     this.emailField.nativeElement.disabled = true;
     this.messageField.nativeElement.disabled = true;
     this.sendButton.nativeElement.disabled = true;
   }
-
 
   /**
    * function to fetch the form data
@@ -94,7 +81,11 @@ export class ContactComponent {
    * @param emailField the email field
    * @param messageField the message field
    */
-  async fetchForm(nameField: any, emailField: any, messageField: any) {
+  private async fetchForm(
+    nameField: HTMLInputElement,
+    emailField: HTMLInputElement,
+    messageField: HTMLInputElement,
+  ): Promise<void> {
     let fd = new FormData();
     fd.append('name', nameField.value);
     fd.append('email', emailField.value);
@@ -102,10 +93,9 @@ export class ContactComponent {
 
     await fetch('https://patriziomarzullo.de/send_mail.php', {
       method: 'POST',
-      body: fd
+      body: fd,
     });
   }
-
 
   /**
    * function to reset the form
@@ -114,28 +104,32 @@ export class ContactComponent {
    * @param emailField the email field
    * @param messageField the message field
    */
-  resetForm(nameField: any, emailField: any, messageField: any) {
-    [nameField, emailField, messageField].forEach(field => {
+  private resetForm(
+    nameField: HTMLInputElement,
+    emailField: HTMLInputElement,
+    messageField: HTMLInputElement,
+  ): void {
+    [nameField, emailField, messageField].forEach((field) => {
       field.value = '';
       field.classList.remove('valid-border', 'invalid-border');
     });
 
-    [this.labelName.nativeElement, this.labelEmail.nativeElement, this.labelMessage.nativeElement]
-      .forEach(label => label.classList.remove('valid', 'invalid'));
+    [
+      this.labelName.nativeElement,
+      this.labelEmail.nativeElement,
+      this.labelMessage.nativeElement,
+    ].forEach((label) => label.classList.remove('valid', 'invalid'));
   }
-
 
   /**
    * function to unlock the form
-   *
    */
-  unlockForm() {
+  private unlockForm(): void {
     this.nameField.nativeElement.disabled = false;
     this.emailField.nativeElement.disabled = false;
     this.messageField.nativeElement.disabled = false;
     this.sendButton.nativeElement.disabled = false;
   }
-
 
   /**
    * function to check and toggle the field validation icon
@@ -143,19 +137,21 @@ export class ContactComponent {
    * @param field the inputfield
    * @param label the ValidationIcon label
    */
-  checkFieldValidationIcon(field: any, label: any) {
+  protected checkFieldValidationIcon(
+    field: HTMLInputElement | HTMLTextAreaElement,
+    label: HTMLLabelElement,
+  ): void {
     const isEmail = field.name === 'email';
     const hasDot = field.value.includes('.');
 
     if (isEmail && hasDot && field.checkValidity()) {
-      this.styleValidFormField(field, label)
+      this.styleValidFormField(field, label);
     } else if (isEmail && !hasDot) {
-      this.styleInvalidFormField(field, label)
+      this.styleInvalidFormField(field, label);
     } else if (!isEmail) {
-      this.toggleStyleFormField(field, label)
+      this.toggleStyleFormField(field, label);
     }
   }
-
 
   /**
    * function to style the form field as valid
@@ -163,15 +159,17 @@ export class ContactComponent {
    * @param field the inputfield
    * @param label the ValidationIcon label
    */
-  styleValidFormField(field: any, label: any) {
+  private styleValidFormField(
+    field: HTMLInputElement | HTMLTextAreaElement,
+    label: HTMLLabelElement,
+  ): void {
     field.classList.add('valid-border');
     field.classList.remove('invalid-border');
     label.classList.add('valid');
     label.classList.remove('invalid');
-    field.classList.add('valid-border', field.checkValidity());
-    field.classList.remove('invalid-border', !field.checkValidity());
+    field.classList.add('valid-border', `${field.checkValidity()}`);
+    field.classList.remove('invalid-border', `${!field.checkValidity()}`);
   }
-
 
   /**
    * function to style the form field as invalid
@@ -179,28 +177,31 @@ export class ContactComponent {
    * @param field the inputfield
    * @param label the ValidationIcon label
    */
-  styleInvalidFormField(field: any, label: any) {
+  private styleInvalidFormField(
+    field: HTMLInputElement | HTMLTextAreaElement,
+    label: HTMLLabelElement,
+  ): void {
     field.classList.remove('valid-border');
     field.classList.add('invalid-border');
     label.classList.add('invalid');
     label.classList.remove('valid');
-    field.classList.remove('valid-border', field.checkValidity());
-    field.classList.add('invalid-border', !field.checkValidity());
+    field.classList.remove('valid-border', `${field.checkValidity()}`);
+    field.classList.add('invalid-border', `${!field.checkValidity()}`);
   }
 
-  
   /**
    * function to toggle the form field style
    *
    * @param field the inputfield
    * @param label the ValidationIcon label
    */
-  toggleStyleFormField(field: any, label: any) {
+  private toggleStyleFormField(
+    field: HTMLInputElement | HTMLTextAreaElement,
+    label: HTMLLabelElement,
+  ): void {
     label.classList.toggle('valid', field.checkValidity());
     label.classList.toggle('invalid', !field.checkValidity());
     field.classList.toggle('valid-border', field.checkValidity());
     field.classList.toggle('invalid-border', !field.checkValidity());
   }
 }
-
-

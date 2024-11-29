@@ -17,13 +17,13 @@
   <form method="POST" (submit)="sendMail()" ngNativeValidate #myForm>
     <input (keyup)="checkFieldValidationIcon(nameField, labelName)" #nameField required placeholder="Your name"
       name="name" type="text">
-    <label #labelName class="label" for="nameField"></label>
+    <label #labelName class="label"></label>
     <input (keyup)="checkFieldValidationIcon(emailField, labelEmail)" #emailField required placeholder="Your email"
       name="email" type="email">
-    <label #labelEmail class="label" for="emailField"></label>
+    <label #labelEmail class="label"></label>
     <textarea (keyup)="checkFieldValidationIcon(messageField, labelMessage)" #messageField required
       placeholder="Your Message" name="message" id="" cols="30" rows="10"></textarea>
-    <label #labelMessage class="label" for="messageField"></label>
+    <label #labelMessage class="label"></label>
     <button #sendButton>Send message</button>
   </form>
 </div>

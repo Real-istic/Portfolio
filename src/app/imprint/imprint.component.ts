@@ -6,11 +6,7 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
   styleUrls: ['./imprint.component.scss']
 })
 
-export class ImprintComponent implements OnInit, AfterViewInit {
-  constructor() {}
-
-  ngOnInit(): void {}
-
+export class ImprintComponent implements AfterViewInit {
   /**
    * function to scroll to the top of the page
    */

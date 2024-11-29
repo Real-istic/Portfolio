@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import {Component, ElementRef, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -6,18 +6,17 @@ import { Component, ViewChild } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
-
-  @ViewChild('respMenu') respMenu: any;
-  @ViewChild('menuRight') menuRight: any;
-  @ViewChild('bar1') bar1: any;
-  @ViewChild('bar2') bar2: any;
-  @ViewChild('bar3') bar3: any;
+  @ViewChild('respMenu') respMenu!: ElementRef;
+  @ViewChild('menuRight') menuRight!: ElementRef;
+  @ViewChild('bar1') bar1!: ElementRef;
+  @ViewChild('bar2') bar2!: ElementRef;
+  @ViewChild('bar3') bar3!: ElementRef;
 
   /**
    * function to toggle the responsive menu
    *
    */
-  toggleResponsiveMenu() {
+  protected toggleResponsiveMenu(): void {
     let menuRight = this.menuRight.nativeElement;
     menuRight.classList.toggle('show');
     this.toggleResponsiveMenuIcon();
@@ -26,7 +25,7 @@ export class NavbarComponent {
   /**
    * function to toggle the responsive menu icon
    */
-  toggleResponsiveMenuIcon() {
+  protected toggleResponsiveMenuIcon(): void {
     let bar1 = this.bar1.nativeElement;
     let bar2 = this.bar2.nativeElement;
     let bar3 = this.bar3.nativeElement;
